@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,71 +15,27 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">SORM</h1>
-        <p class="header">A case-classes oriented ORM framework for Scala</p>
+        <h1>SORM</h1>
+        <p>A case-classes oriented ORM framework for Scala</p>
+
+        <p class="view"><a href="https://github.com/nikita-volkov/sorm">View the Project on GitHub <small>nikita-volkov/sorm</small></a></p>
+
 
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/nikita-volkov/sorm/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/nikita-volkov/sorm/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/nikita-volkov/sorm">View On GitHub</a></li>
+          <li><a href="https://github.com/nikita-volkov/sorm/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nikita-volkov/sorm/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nikita-volkov/sorm">View On <strong>GitHub</strong></a></li>
         </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/nikita-volkov">nikita-volkov</a></p>
-
-
       </header>
       <section>
-        <p>SORM is an object-relational mapping framework having elegance, consistency and simplicity at its primary principles. It is absolutely abstracted from relational side automagically creating database tables, emitting queries, inserting, updating and deleting records. This all functionality is presented to the user with a simple API around standard Scala's case classes. </p>
-
-<h2>Creating a database schema can be as easy as this:</h2>
-
-<pre><code>case class Artist ( name : String, genres : Set[Genre] )
-case class Genre ( names : String ) 
-val db 
-  = new sorm.Instance(
-      entities = Set() + sorm.Entity[Artist]() + sorm.Entity[Style](),
-      url = "jdbc:h2:mem:test",
-      user = "",
-      password = ""
-    )
-</code></pre>
-
-<h2>Storing values in a database doesn't have to be any harder than this:</h2>
-
-<pre><code>val cx = db.connection()
-
-val metal = cx.save( Genre("Metal") )
-val rock = cx.save( Genre("Rock") )
-cx.save( Artist("Metallica", Set() + metal + rock) )
-cx.save( Artist("Dire Straits", Set() + rock) )
-</code></pre>
-
-<h2>Why should retrieving values from a database be any scarier than this?</h2>
-
-<pre><code>val metallica = cx.access[Artist].whereEqual("name", "Metallica").fetchOne()
-</code></pre>
-
-<h2>Learn more</h2>
-
-<p>For a detailed info please visit the <a href="https://github.com/nikita-volkov/sorm/wiki">Wiki</a> or learn the <a href="http://nikita-volkov.github.com/sorm/api/">API</a> (you're really interested in the contents of a plain <code>sorm._</code> package only).</p>
-
-<h2>Support</h2>
-
-<p>Support is provided at <a href="http://stackoverflow.com/">StackOverflow</a>. Go ahead and ask your questions under a tag "sorm".</p>
-
-<h2>Issues</h2>
-
-<p>Please post any issues you come across in the <a href="https://github.com/nikita-volkov/sorm/issues">issues</a> section.</p>
-
-<h2>Contribution</h2>
-
-<p>It is a very large project, and any kind of contribution is much appreciated. So if you find anything that you think SORM could evolve on, go ahead and fork and leave your pull requests. Currently, the most wanted contributions are drivers for other DBRMs.</p>
+        <p>For a detailed info please visit the <a href="https://github.com/nikita-volkov/sorm/">Project Repo</a>, the <a href="https://github.com/nikita-volkov/sorm/wiki">Wiki</a> or learn the <a href="http://nikita-volkov.github.com/sorm/api/">API</a>.</p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p>This project is maintained by <a href="https://github.com/nikita-volkov">nikita-volkov</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>
