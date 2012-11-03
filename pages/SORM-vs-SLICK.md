@@ -371,7 +371,7 @@ db.withTmpConnection { cx =>
     <td class="yes">Yes</td>
   </tr>
   <tr>
-    <td><h4>Statically Resolved Query Parameters</h4></td>
+    <td><h4>Statically Checked Query Parameters</h4></td>
     <td class="no">No</td>
     <td class="yes">Yes</td>
   </tr>
