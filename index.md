@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction
+title: SORM
 tagline: A simple, elegant and easily scalable way to do persistance in Scala 
 ---
 
@@ -59,7 +59,7 @@ val rockArtists = Db.query[Artist].whereEqual("genres.name", "Rock").fetch() // 
 Latest release info and installation instructions are provided at the project's [GitHub page](https://github.com/nikita-volkov/sorm#readme).
 
 ##Learn More
-You can see how SORM compares to the currently dominant Scala ORM Framework [here](/pages/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/pages/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
+You can see how SORM compares to the currently dominant Scala ORM Framework [here](/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
 
 ##Support
 Support is provided at [StackOverflow](http://stackoverflow.com/questions/tagged/sorm). Go ahead and ask your questions under a tag "sorm".
