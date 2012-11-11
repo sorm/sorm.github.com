@@ -26,9 +26,9 @@ external_links:
     url: https://github.com/nikita-volkov/sorm/wiki
   - name: Issues
     url: https://github.com/nikita-volkov/sorm/issues
-  - name: Q&A
+  - name: Stack Overflow
     url: http://stackoverflow.com/questions/tagged/sorm
-  - name: Sources 
+  - name: GitHub
     url: https://github.com/nikita-volkov/sorm
 
 # github: https://github.com/nikita-volkov/sorm
