@@ -22,8 +22,6 @@ author :
 external_links: 
   - name: API
     url: /api
-  - name: Wiki 
-    url: https://github.com/nikita-volkov/sorm/wiki
   - name: Issues
     url: https://github.com/nikita-volkov/sorm/issues
   - name: Stack Overflow
