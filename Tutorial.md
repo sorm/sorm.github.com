@@ -121,7 +121,9 @@ Db.save( Artist( Map( en -> Seq("Godsmack"),
 {% highlight scala %}
 //  An artist by id `2`.
 //  The result type is `Option[Artist with Persisted]`
-val nirvana = Db.query[Artist].whereEquals("id", 2).fetchOne() 
+val nirvana = Db.query[Artist].whereEqual("id", 2).fetchOne() 
+//  Please note that for HSQLDB instead of "Nirvana" it will be "Kino", since
+//  in that db indexes are zero-based
 
 //  All artists having a genre equaling to the value of the `metal` variable, 
 //  which we've previously declared. 
@@ -133,7 +135,7 @@ val metalArtists = Db.query[Artist].whereContains("genres", metal).fetch()
 //  The result type is `Stream[Artist with Persisted]`
 val hardRockArtists 
   = Db.query[Artist]
-      .whereEquals("genres.item.names.value.item.value", "Hard Rock")
-      .whereEquals("genres.item.names.key.code", "en")
+      .whereEqual("genres.item.names.value.item", "Hard Rock")
+      .whereEqual("genres.item.names.key.code", "en")
       .fetch()
 {% endhighlight %}
