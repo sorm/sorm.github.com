@@ -1,7 +1,8 @@
 ---
-layout: page
-title: Documentation
-<!-- group: navigation -->
+layout : page
+title : Documentation
+group : navigation
+comments : false
 ---
 {% for p in site.pages %}
   {% if p.group == 'doc' %}

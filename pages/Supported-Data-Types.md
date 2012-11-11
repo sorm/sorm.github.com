@@ -1,4 +1,9 @@
-
+---
+layout : doc
+title : Data Types
+group : doc
+comments : true
+---
 ## Case Classes
 Naturally, you represent your entities with them.
 

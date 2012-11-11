@@ -1,3 +1,9 @@
+---
+layout : doc
+title : Querying and Filters
+group : doc
+comments : true
+---
 
 All the querying functionality is provided through the `access[T]` method of `sorm.Connection`. The principle is simple: by calling `access[T]` you create an `Access` object, then modify it by calling different methods on it, which return copies of this object with appropriate modifications. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
 

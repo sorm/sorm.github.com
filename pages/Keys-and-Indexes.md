@@ -1,7 +1,8 @@
 ---
 title: Keys and Indexes
 group: doc
-layout: page
+layout: doc
+comments: true
 ---
 
 ##Types of keys

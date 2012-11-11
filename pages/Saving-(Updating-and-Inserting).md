@@ -1,3 +1,9 @@
+---
+layout : doc
+title : Saving (Updating and Inserting)
+group : doc
+comments : true
+---
 Prior to reading this page please get yourself acquainted with the [Persisted entities identification concept](Persisted-Trait-and-Id) of SORM.
 
 Let's assume you have a `SORM` connection assigned to `cx` variable and a following model registered with SORM `Instance`:

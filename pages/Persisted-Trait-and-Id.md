@@ -2,6 +2,7 @@
 title: Persisted Trait and Id
 group: doc
 layout: doc
+comments: true
 ---
 
 All the entities returned from db have a `Persisted` trait with an appropriate value of `id` mixed in. This is what lets SORM decide whether to `INSERT` rows or `UPDATE` them (and which ones) when the `save` operation is called. This also provides you access its generated `id`.
