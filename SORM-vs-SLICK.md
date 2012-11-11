@@ -113,14 +113,21 @@ db.withSession {
 
 ##Inserting
 
+Persist the following three objects:
+{% highlight scala %}
+val supplier1 = Supplier("Acme, Inc.", "99 Market Street", "Groundsville", "CA", "95199")
+val supplier2 = Supplier("Superior Coffee", "1 Party Place", "Mendocino", "CA", "95460")
+val supplier3 = Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966")
+{% endhighlight %}
+
 <table class="vs">
   <tr>
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-Db.save(Supplier("Acme, Inc.", "99 Market Street", "Groundsville", "CA", "95199"))
-Db.save(Supplier("Superior Coffee", "1 Party Place", "Mendocino", "CA", "95460"))
-Db.save(Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966"))
+Db.save(supplier1)
+Db.save(supplier2)
+Db.save(supplier3)
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -128,9 +135,9 @@ Db.save(Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966")
       <h3>Slick</h3>
 {% highlight scala %}
 db.withSession {
-  Suppliers.insert(101, "Acme, Inc.", "99 Market Street", "Groundsville", "CA", "95199")
-  Suppliers.insert(49, "Superior Coffee", "1 Party Place", "Mendocino", "CA", "95460")
-  Suppliers.insert(150, "The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966")
+  Suppliers.insert(101, supplier1.name, supplier1.street, supplier1.city, supplier1.state, supplier1.zip)
+  Suppliers.insert(49, supplier2.name, supplier2.street, supplier2.city, supplier2.state, supplier2.zip)
+  Suppliers.insert(150, supplier3.name, supplier3.street, supplier3.city, supplier3.state, supplier3.zip)
 }
 {% endhighlight %}
     </td>
@@ -147,7 +154,9 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-Db.access[Coffee].whereEqual("supplier.name", "Superior Coffee").fetch()
+Db.access[Coffee]
+  .whereEqual("supplier.name", "Superior Coffee")
+  .fetch()
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>

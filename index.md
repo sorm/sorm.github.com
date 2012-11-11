@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SORM
+title: Introduction
 tagline: A simple, elegant and easily scalable way to do persistance in Scala 
 ---
 
@@ -37,7 +37,7 @@ Create a SORM instance, which automatically generates the schema:
 {% highlight scala %}
 import sorm._
 object Db extends Instance (
-  entities = Set() + Entity[Artist]() + Entity[Style](),
+  entities = Set() + Entity[Artist]() + Entity[Genre](),
   url = "jdbc:h2:mem:test"
 )
 {% endhighlight %}
@@ -62,7 +62,7 @@ val rockArtists = Db.access[Artist].whereEqual("genres.name", "Rock").fetch() //
 Latest release info and installation instructions are provided at the project's [GitHub page](https://github.com/nikita-volkov/sorm#readme).
 
 ##Learn More
-You can see how SORM compares to the currently dominant Scala ORM Framework [here](/pages/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/pages/Tutorial.html). For detailed documentation please visit the [Wiki](https://github.com/nikita-volkov/sorm/wiki) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
+You can see how SORM compares to the currently dominant Scala ORM Framework [here](/pages/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/pages/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
 
 ##Support
 Support is provided at [StackOverflow](http://stackoverflow.com/questions/tagged/sorm). Go ahead and ask your questions under a tag "sorm".
@@ -71,4 +71,4 @@ Support is provided at [StackOverflow](http://stackoverflow.com/questions/tagged
 Please, post any issues you come across [here](https://github.com/nikita-volkov/sorm/issues).
 
 ##Contribution
-It is a very large project, and any kind of contribution is much appreciated. So if you find anything that you think SORM could evolve on, go ahead and [fork it](https://github.com/nikita-volkov/sorm)! Currently, the most wanted contributions are drivers for other DBRMs. 
+Any kind of contribution is much appreciated. If you find anything that you think SORM could evolve on, go ahead and [fork it](https://github.com/nikita-volkov/sorm)! 
