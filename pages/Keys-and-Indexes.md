@@ -9,7 +9,7 @@ In SORM there are two types of keys:
 
 * Unique - a sequence of names of entity properties which together form a unique value. When possible this one maps to a standard sql `UNIQUE KEY`.
 
-* Index - a sequence of names of entity properties which will be used together in queries which require optimization. By "being used" it is implied that they either get specified in either a "where" or "order"-clause of `Access`. Usually this one maps to a standard sql `INDEX`.
+* Index - a sequence of names of entity properties which will be used together in queries which require optimization. By "being used" it is implied that they will get specified in either a "where" or an "order"-clause of a query. Usually this one maps to a standard sql `INDEX`.
 
 
 ##Specifying

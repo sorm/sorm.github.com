@@ -35,10 +35,9 @@ case class Supplier ( name : String, street : String, city : String, state : Str
 {% highlight scala %}
 import sorm._
 
-val db = new Instance(
+object Db extends Instance (
   entities = Set( Entity[Coffee](), Entity[Supplier]() ),
-  url = "jdbc:h2:mem:test",
-  initMode = InitMode.Create
+  url = "jdbc:h2:mem:test"
 )
 {% endhighlight %}
     </td>
@@ -75,32 +74,22 @@ val db = Database.forURL("jdbc:h2:mem:test", driver = "org.h2.Driver")
   </tr>
 </table>
 
-<!-- 
-##Connections management and multithreading
+
+##Connections management and pooling
 <table class="vs">
   <tr>
     <td>
       <h3>SORM</h3>
-      <p>Each call to <code>db.connection()</code> opens a new connection to the db. This can be beneficial in multithreaded applications (see <a href="/pages/Connections-and-Multithreading.html" target="_blank">Connections and Multithreading</a>). In other cases opening a single connection as follows will be sufficient.</p>
-{% highlight scala %}
-val cx = db.connection()
-{% endhighlight %}
-
+      <p>Automatic</p>
     </td>
     <td class="separator"><div></div></td>
     <td>
       <h3>Slick</h3>
-      <p>By default Slick operates on a single-connection. Using 3rd-party connection poolers multiple connections can be achieved.</p>
-      <p>It'll be implied in all subsequent examples that the code is wrapped in the following closure</p>
-{% highlight scala %}
-db.withSession {
-  ...
-}
-{% endhighlight %}
+      <p>Uses a single connection. Using 3rd-party connection poolers multiple connections can be achieved.</p>
     </td>
   </tr>
 </table>
- -->
+
 
 ##Database schema generation
 <table class="vs">
@@ -129,11 +118,9 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-db.withTmpConnection { cx =>
-  cx.save(Supplier("Acme, Inc.", "99 Market Street", "Groundsville", "CA", "95199"))
-  cx.save(Supplier("Superior Coffee", "1 Party Place", "Mendocino", "CA", "95460"))
-  cx.save(Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966"))
-}
+Db.save(Supplier("Acme, Inc.", "99 Market Street", "Groundsville", "CA", "95199"))
+Db.save(Supplier("Superior Coffee", "1 Party Place", "Mendocino", "CA", "95460"))
+Db.save(Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966"))
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -160,11 +147,7 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-db.withTmpConnection { cx =>
-  cx.access[Coffee]
-    .whereEqual("supplier.name", "Superior Coffee")
-    .fetch()
-}
+Db.access[Coffee].whereEqual("supplier.name", "Superior Coffee").fetch()
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -182,16 +165,14 @@ db.withSession {
   </tr>
 </table>
 
-###Collect just names of coffee and supplier 
+###Collect just the names of coffee and supplier 
 <table class="vs">
   <tr>
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-db.withTmpConnection { cx =>
-  cx.access[Coffee].whereSmaller("price", 9.0).fetch()
-    .map(coffee => coffee.name -> coffee.supplier.name)
-}
+Db.access[Coffee].whereSmaller("price", 9.0).fetch()
+  .map(c => (c.name, c.supplier.name))
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -217,10 +198,8 @@ db.withSession {
     <td>
       <h3>SORM*</h3>
 {% highlight scala %}
-db.withTmpConnection { cx =>
-  cx.save(coffee.copy(sales = coffee.sales + 1, 
-                      total = coffee.total + 23.4))
-}
+Db.save(coffee.copy(sales = coffee.sales + 1, 
+                    total = coffee.total + 23.4))
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -240,23 +219,21 @@ db.withSession {
   </tr>
 </table>
 <div class="footnotes">
-  <p>* SORM automatically identifies the fetched values with help of `Persisted` trait.</p>
+  <p>* SORM automatically identifies the fetched values with help of <a href="/api/#sorm.Persisted"><code>Persisted</code></a> trait. To learn more about how it works please visit <a href="/pages/Persisted-Trait-and-Id.html">this page</a>.</p>
   <p>** In Slick the identifier of the row has to be manually managed, by either extending the model case class to include it, or storing it separately.</p>
 </div>
 
-
+<!-- 
 ###Update a coffee supplier to be the one having a name "The High Ground"
 <table class="vs">
   <tr>
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-db.withTmpConnection { cx =>
-  val supplier = cx.access[Supplier]
-                   .whereEqual("name", "The High Ground")
-                   .fetchOne()
-  supplier.foreach(s => cx.save(coffee.copy(supplier = s)))
-}
+val supplier = Db.access[Supplier]
+                 .whereEqual("name", "The High Ground")
+                 .fetchOne()
+supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
 {% endhighlight %}
     </td>
     <td class="separator"><div></div></td>
@@ -268,26 +245,28 @@ db.withTmpConnection { cx =>
 </table>
 
 
-
+ -->
 
 
 <h2>Supported databases</h2>
 <table class="vs">
   <tr>
     <td>
-      <h3>SORM*</h3>
+      <h3>SORM</h3>
       <ul>
-        <li>H2</li>
         <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>H2</li>
+        <li>HSQLDB</li>
       </ul>
     </td>
     <td class="separator"><div></div></td>
     <td>
       <h3>Slick</h3>
       <ul>
-        <li>Derby/JavaDB</li>
+        <li>Derby</li>
         <li>H2</li>
-        <li>HSQLDB/HyperSQL</li>
+        <li>HSQLDB</li>
         <li>Microsoft Access</li>
         <li>Microsoft SQL Server</li>
         <li>MySQL</li>
@@ -297,9 +276,6 @@ db.withTmpConnection { cx =>
     </td>
   </tr>
 </table>
-<div class="footnotes">
-  <p>* Support for more dbs is comming in nearest releases of SORM</p>
-</div>
 
 
 
@@ -317,6 +293,11 @@ db.withTmpConnection { cx =>
   </tr>
   <tr>
     <td><h4>Abstraction from Insert and Update Operations</h4></td>
+    <td class="yes">Yes</td>
+    <td class="no">No</td>
+  </tr>
+  <tr>
+    <td><h4>Abstraction from autoincremented columns management</h4></td>
     <td class="yes">Yes</td>
     <td class="no">No</td>
   </tr>
@@ -366,14 +347,14 @@ db.withTmpConnection { cx =>
     <td class="yes">Yes</td>
   </tr>
   <tr>
-    <td><h4>Native DB Functions</h4></td>
+    <td><h4>Statically Checked Query Parameters</h4></td>
     <td class="no">No</td>
     <td class="yes">Yes</td>
   </tr>
   <tr>
-    <td><h4>Statically Checked Query Parameters</h4></td>
+    <td><h4>Lazy queries</h4></td>
     <td class="no">No</td>
-    <td class="yes">Yes</td>
+    <td class="">???</td>
   </tr>
 </table>
 <div class="footnotes">
