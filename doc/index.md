@@ -3,7 +3,6 @@ layout : page
 title : Documentation
 group : navigation
 comments : false
-redirect : /Initialization.html
 ---
 {% for p in site.pages %}
   {% if p.group == 'doc' %}
