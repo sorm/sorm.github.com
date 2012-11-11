@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>driver - SORM 0.2.0 API - sorm.driver</title>
-          <meta name="description" content="driver - SORM 0.2.0 API - sorm.driver" />
-          <meta name="keywords" content="driver SORM 0.2.0 API sorm.driver" />
+          <title>driver - SORM 0.3.0-SNAPSHOT API - sorm.driver</title>
+          <meta name="description" content="driver - SORM 0.3.0 - SNAPSHOT API - sorm.driver" />
+          <meta name="keywords" content="driver SORM 0.3.0 SNAPSHOT API sorm.driver" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -63,20 +63,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="sorm.driver.Driver" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="DriverextendsObject"></a>
-      <a id="Driver:Driver"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Driver.html"><span class="name">Driver</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="sorm.driver.DriverConnection" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="sorm.driver.DriverConnection" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="DriverConnectionextendsObject"></a>
       <a id="DriverConnection:DriverConnection"></a>
       <h4 class="signature">
@@ -91,7 +78,7 @@
       <p class="comment cmt">An abstraction over jdbc connection, instances of which implement sql dialects of different databases
 </p>
     </li><li name="sorm.driver.H2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="H2extendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTablewithStdClose"></a>
+      <a id="H2extendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTable"></a>
       <a id="H2:H2"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -99,12 +86,25 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="H2.html"><span class="name">H2</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a> with <a href="StdClose.html" class="extype" name="sorm.driver.StdClose">StdClose</a></span>
+        <a href="H2.html"><span class="name">H2</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.driver.Hsqldb" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HsqldbextendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTable"></a>
+      <a id="Hsqldb:Hsqldb"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Hsqldb.html"><span class="name">Hsqldb</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></span>
       </span>
       </h4>
       
     </li><li name="sorm.driver.Mysql" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="MysqlextendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTablewithStdClose"></a>
+      <a id="MysqlextendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTable"></a>
       <a id="Mysql:Mysql"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -112,7 +112,20 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Mysql.html"><span class="name">Mysql</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a> with <a href="StdClose.html" class="extype" name="sorm.driver.StdClose">StdClose</a></span>
+        <a href="Mysql.html"><span class="name">Mysql</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.driver.Postgres" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PostgresextendsDriverConnectionwithStdQuerywithStdSqlRenderingwithStdDropAllTableswithStdAbstractSqlToSqlwithStdNowwithStdModifywithStdDropTableswithStdQuotewithStdTransactionwithStdCreateTable"></a>
+      <a id="Postgres:Postgres"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Postgres.html"><span class="name">Postgres</span></a><span class="result"> extends <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a> with <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a> with <a href="StdSqlRendering.html" class="extype" name="sorm.driver.StdSqlRendering">StdSqlRendering</a> with <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> with <a href="StdAbstractSqlToSql.html" class="extype" name="sorm.driver.StdAbstractSqlToSql">StdAbstractSqlToSql</a> with <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> with <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> with <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> with <a href="StdQuote.html" class="extype" name="sorm.driver.StdQuote">StdQuote</a> with <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> with <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></span>
       </span>
       </h4>
       
@@ -126,19 +139,6 @@
       </span>
       <span class="symbol">
         <a href="StdAbstractSqlToSql.html"><span class="name">StdAbstractSqlToSql</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="sorm.driver.StdClose" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="StdCloseextendsObject"></a>
-      <a id="StdClose:StdClose"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="StdClose.html"><span class="name">StdClose</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
@@ -264,23 +264,7 @@
 
         
 
-        <div id="values" class="values members">
-              <h3>Value Members</h3>
-              <ol><li name="sorm.driver.Driver" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Driver"></a>
-      <a id="Driver:Driver"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="Driver$.html"><span class="name">Driver</span></a>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
+        
 
         
 

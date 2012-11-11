@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Entity - SORM 0.2.0 API - sorm.Entity</title>
-          <meta name="description" content="Entity - SORM 0.2.0 API - sorm.Entity" />
-          <meta name="keywords" content="Entity SORM 0.2.0 API sorm.Entity" />
+          <title>Entity - SORM 0.3.0-SNAPSHOT API - sorm.Entity</title>
+          <meta name="description" content="Entity - SORM 0.3.0 - SNAPSHOT API - sorm.Entity" />
+          <meta name="keywords" content="Entity SORM 0.3.0 SNAPSHOT API sorm.Entity" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -40,7 +40,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Entity</span><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexes">indexes: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="uniqueKeys">uniqueKeys: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Entity</span><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexed">indexed: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="unique">unique: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -85,7 +85,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="sorm.Entity#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(reflection:sorm.reflection.Reflection,indexes:Set[Seq[String]],uniqueKeys:Set[Seq[String]]):sorm.Entity"></a>
+      <a id="&lt;init&gt;(reflection:sorm.reflection.Reflection,indexed:Set[Seq[String]],unique:Set[Seq[String]]):sorm.Entity"></a>
       <a id="&lt;init&gt;:Entity"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -93,7 +93,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Entity</span><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexes">indexes: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="uniqueKeys">uniqueKeys: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span>
+        <span class="name">Entity</span><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexed">indexed: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="unique">unique: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span>
       </span>
       </h4>
       
@@ -242,16 +242,16 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="sorm.Entity#indexes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="indexes:Set[Seq[String]]"></a>
-      <a id="indexes:Set[Seq[String]]"></a>
+    </li><li name="sorm.Entity#indexed" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="indexed:Set[Seq[String]]"></a>
+      <a id="indexed:Set[Seq[String]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">indexes</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+        <span class="name">indexed</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
       </span>
       </h4>
       
@@ -333,16 +333,16 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="sorm.Entity#uniqueKeys" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="uniqueKeys:Set[Seq[String]]"></a>
-      <a id="uniqueKeys:Set[Seq[String]]"></a>
+    </li><li name="sorm.Entity#unique" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="unique:Set[Seq[String]]"></a>
+      <a id="unique:Set[Seq[String]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">uniqueKeys</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+        <span class="name">unique</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
       </span>
       </h4>
       

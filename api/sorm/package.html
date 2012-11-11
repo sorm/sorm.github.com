@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sorm - SORM 0.2.0 API - sorm</title>
-          <meta name="description" content="sorm - SORM 0.2.0 API - sorm" />
-          <meta name="keywords" content="sorm SORM 0.2.0 API sorm" />
+          <title>sorm - SORM 0.3.0-SNAPSHOT API - sorm</title>
+          <meta name="description" content="sorm - SORM 0.3.0 - SNAPSHOT API - sorm" />
+          <meta name="keywords" content="sorm SORM 0.3.0 SNAPSHOT API sorm" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -63,33 +63,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="sorm.Access" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Access[T&lt;:AnyRef]extendsObject"></a>
-      <a id="Access[T&lt;:AnyRef]:Access[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="Access.html"><span class="name">Access</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="scala.AnyRef">AnyRef</span></span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="sorm.Connection" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ConnectionextendsLogging"></a>
-      <a id="Connection:Connection"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Connection.html"><span class="name">Connection</span></a><span class="result"> extends <span class="extype" name="com.weiglewilczek.slf4s.Logging">Logging</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="sorm.Entity" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="sorm.Entity" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="EntityextendsProductwithSerializable"></a>
       <a id="Entity:Entity"></a>
       <h4 class="signature">
@@ -98,7 +72,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Entity.html"><span class="name">Entity</span></a><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexes">indexes: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="uniqueKeys">uniqueKeys: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Entity.html"><span class="name">Entity</span></a><span class="params">(<span name="reflection">reflection: <a href="reflection/Reflection.html" class="extype" name="sorm.reflection.Reflection">Reflection</a></span>, <span name="indexed">indexed: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="unique">unique: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -114,10 +88,10 @@
         <a href="InitMode.html"><span class="name">InitMode</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <p class="comment cmt">The mode for initialization performed when a connection to the db is
-established on creation of SORM instance.</p>
+      <p class="comment cmt">A mode for initialization performed when a connection to db gets established
+on creation of a SORM instance.</p>
     </li><li name="sorm.Instance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="InstanceextendsLogging"></a>
+      <a id="InstanceextendsInstance.InitializationwithInstance.Api"></a>
       <a id="Instance:Instance"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -125,7 +99,7 @@ established on creation of SORM instance.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Instance.html"><span class="name">Instance</span></a><span class="result"> extends <span class="extype" name="com.weiglewilczek.slf4s.Logging">Logging</span></span>
+        <a href="Instance.html"><span class="name">Instance</span></a><span class="result"> extends <a href="Instance$$Initialization.html" class="extype" name="sorm.Instance.Initialization">Initialization</a> with <a href="Instance$$Api.html" class="extype" name="sorm.Instance.Api">Api</a></span>
       </span>
       </h4>
       <p class="comment cmt">The instance of SORM</p>
@@ -141,6 +115,19 @@ established on creation of SORM instance.</p>
         <a href="Persisted.html"><span class="name">Persisted</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
+      <p class="comment cmt">All the entities returned from SORM have a <code>Persisted</code> trait with an appropriate value of <code>id</code> mixed in.</p>
+    </li><li name="sorm.Querier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Querier[T&lt;:AnyRef]extendsObject"></a>
+      <a id="Querier[T&lt;:AnyRef]:Querier[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Querier.html"><span class="name">Querier</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="scala.AnyRef">AnyRef</span></span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
       
     </li></ol>
             </div>
@@ -149,16 +136,16 @@ established on creation of SORM instance.</p>
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="sorm.Access" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Access"></a>
-      <a id="Access:Access"></a>
+              <ol><li name="sorm.Dsl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Dsl"></a>
+      <a id="Dsl:Dsl"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Access$.html"><span class="name">Access</span></a>
+        <a href="Dsl$.html"><span class="name">Dsl</span></a>
       </span>
       </h4>
       
@@ -175,32 +162,6 @@ established on creation of SORM instance.</p>
       </span>
       </h4>
       
-    </li><li name="sorm.Filter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Filter"></a>
-      <a id="Filter:Filter"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="Filter$.html"><span class="name">Filter</span></a>
-      </span>
-      </h4>
-      <p class="comment cmt">A filter declaration which has no knowledge of mapping.</p>
-    </li><li name="sorm.FilterDsl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="FilterDsl"></a>
-      <a id="FilterDsl:FilterDsl"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="FilterDsl$.html"><span class="name">FilterDsl</span></a>
-      </span>
-      </h4>
-      
     </li><li name="sorm.InitMode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="InitMode"></a>
       <a id="InitMode:InitMode"></a>
@@ -211,6 +172,32 @@ established on creation of SORM instance.</p>
       </span>
       <span class="symbol">
         <a href="InitMode$.html"><span class="name">InitMode</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.Instance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Instance"></a>
+      <a id="Instance:Instance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Instance$.html"><span class="name">Instance</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.Querier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Querier"></a>
+      <a id="Querier:Querier"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Querier$.html"><span class="name">Querier</span></a>
       </span>
       </h4>
       
@@ -315,6 +302,19 @@ established on creation of SORM instance.</p>
       </span>
       <span class="symbol">
         <a href="persisted/package.html"><span class="name">persisted</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.pooling" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pooling"></a>
+      <a id="pooling:pooling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="pooling/package.html"><span class="name">pooling</span></a>
       </span>
       </h4>
       

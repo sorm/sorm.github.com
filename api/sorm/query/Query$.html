@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Query - SORM 0.2.0 API - sorm.query.Query</title>
-          <meta name="description" content="Query - SORM 0.2.0 API - sorm.query.Query" />
-          <meta name="keywords" content="Query SORM 0.2.0 API sorm.query.Query" />
+          <title>Query - SORM 0.3.0-SNAPSHOT API - sorm.query.Query</title>
+          <meta name="description" content="Query - SORM 0.3.0 - SNAPSHOT API - sorm.query.Query" />
+          <meta name="keywords" content="Query SORM 0.3.0 SNAPSHOT API sorm.query.Query" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -29,9 +29,9 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../lib/object_big.png" />
+        <a href="Query.html" title="Go to companion"><img src="../../lib/object_to_class_big.png" /></a>
         <p id="owner"><a href="../package.html" class="extype" name="sorm">sorm</a>.<a href="package.html" class="extype" name="sorm.query">query</a></p>
-        <h1>Query</h1>
+        <h1><a href="Query.html" title="Go to companion">Query</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,13 +40,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Query</span>
+        <span class="name">Query</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -64,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="sorm.query.Query"><span>Query</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="sorm.query.Query"><span>Query</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -177,19 +177,6 @@
       </span>
       </h4>
       
-    </li><li name="sorm.query.Query.Query" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="QueryextendsProductwithSerializable"></a>
-      <a id="Query:Query"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="Query$$Query.html"><span class="name">Query</span></a><span class="params">(<span name="mapping">mapping: <a href="../mappings/EntityMapping.html" class="extype" name="sorm.mappings.EntityMapping">EntityMapping</a></span>, <span name="where">where: <span class="extype" name="scala.Option">Option</span>[<a href="Query$$Where.html" class="extype" name="sorm.query.Query.Where">Where</a>] = <span class="symbol">scala.None</span></span>, <span name="order">order: <span class="extype" name="scala.Seq">Seq</span>[<a href="Query$$Order.html" class="extype" name="sorm.query.Query.Order">Order</a>] = <span class="symbol">immutable.this.Nil</span></span>, <span name="limit">limit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="offset">offset: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4>
-      
     </li><li name="sorm.query.Query.Where" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="WhereextendsObject"></a>
       <a id="Where:Where"></a>
@@ -275,6 +262,86 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="sorm.query.Query.Constitutes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Constitutes"></a>
+      <a id="Constitutes:Constitutes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Constitutes$.html"><span class="name">Constitutes</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Makes part of a collection
+</p>
+    </li><li name="sorm.query.Query.Contains" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Contains"></a>
+      <a id="Contains:Contains"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Contains$.html"><span class="name">Contains</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.Equal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Equal"></a>
+      <a id="Equal:Equal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Equal$.html"><span class="name">Equal</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.HasSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HasSize"></a>
+      <a id="HasSize:HasSize"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$HasSize$.html"><span class="name">HasSize</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">For collections.</p>
+    </li><li name="sorm.query.Query.In" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="In"></a>
+      <a id="In:In"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$In$.html"><span class="name">In</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.Includes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Includes"></a>
+      <a id="Includes:Includes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Includes$.html"><span class="name">Includes</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Includes a collection
+</p>
     </li><li name="sorm.query.Query.Kind" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Kind"></a>
       <a id="Kind:Kind"></a>
@@ -288,16 +355,172 @@
       </span>
       </h4>
       
-    </li><li name="sorm.query.Query.Operator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Operator"></a>
-      <a id="Operator:Operator"></a>
+    </li><li name="sorm.query.Query.Larger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Larger"></a>
+      <a id="Larger:Larger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Query$$Operator$.html"><span class="name">Operator</span></a>
+        <a href="Query$$Larger$.html"><span class="name">Larger</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.LargerOrEqual" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LargerOrEqual"></a>
+      <a id="LargerOrEqual:LargerOrEqual"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$LargerOrEqual$.html"><span class="name">LargerOrEqual</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.Like" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Like"></a>
+      <a id="Like:Like"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Like$.html"><span class="name">Like</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotConstitutes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotConstitutes"></a>
+      <a id="NotConstitutes:NotConstitutes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotConstitutes$.html"><span class="name">NotConstitutes</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotContains" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotContains"></a>
+      <a id="NotContains:NotContains"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotContains$.html"><span class="name">NotContains</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotEqual" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotEqual"></a>
+      <a id="NotEqual:NotEqual"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotEqual$.html"><span class="name">NotEqual</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotIn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotIn"></a>
+      <a id="NotIn:NotIn"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotIn$.html"><span class="name">NotIn</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotIncludes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotIncludes"></a>
+      <a id="NotIncludes:NotIncludes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotIncludes$.html"><span class="name">NotIncludes</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotLike" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotLike"></a>
+      <a id="NotLike:NotLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotLike$.html"><span class="name">NotLike</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.NotRegex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotRegex"></a>
+      <a id="NotRegex:NotRegex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$NotRegex$.html"><span class="name">NotRegex</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.Regex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Regex"></a>
+      <a id="Regex:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Regex$.html"><span class="name">Regex</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.Smaller" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Smaller"></a>
+      <a id="Smaller:Smaller"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$Smaller$.html"><span class="name">Smaller</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="sorm.query.Query.SmallerOrEqual" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SmallerOrEqual"></a>
+      <a id="SmallerOrEqual:SmallerOrEqual"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Query$$SmallerOrEqual$.html"><span class="name">SmallerOrEqual</span></a><span class="result"> extends <a href="Query$$Operator.html" class="extype" name="sorm.query.Query.Operator">Operator</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -533,7 +756,11 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
