@@ -12,7 +12,7 @@ layout: default
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="span9">
     {{ content }}
     <!-- 
     <hr>
@@ -29,19 +29,19 @@ layout: default
       {% endif %}
     </div>
     -->
-    <hr>
-    {% include JB/comments %}
   </div>
   
-  <div class="span4">
+  <div class="span3">
 
     <section>
-      <h4>Sections</h4>
+      <h3>Sections</h3>
+      <ol>
       {% for p in site.pages %}
         {% if p.group == 'doc' %}
         <li><a href="{{ BASE_PATH }}{{p.url}}">{{p.title}}</a></li>
         {% endif %}
       {% endfor %}
+      </ol>
 
     </section>
 <!-- 
@@ -56,4 +56,8 @@ layout: default
     {% endunless %}         
 -->
   </div>
+</div>
+<hr>
+<div class="row">
+{% include JB/comments %}
 </div>
