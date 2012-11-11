@@ -121,18 +121,18 @@ Db.save( Artist( Map( en -> Seq("Godsmack"),
 {% highlight scala %}
 //  An artist by id `2`.
 //  The result type is `Option[Artist with Persisted]`
-val nirvana = Db.access[Artist].whereEquals("id", 2).fetchOne() 
+val nirvana = Db.query[Artist].whereEquals("id", 2).fetchOne() 
 
 //  All artists having a genre equaling to the value of the `metal` variable, 
 //  which we've previously declared. 
 //  The result type is `Stream[Artist with Persisted]`
-val metalArtists = Db.access[Artist].whereContains("genres", metal).fetch()
+val metalArtists = Db.query[Artist].whereContains("genres", metal).fetch()
 
 //  All artists having a genre that contains "Hard Rock" of a locale with a 
 //  code "en" in a list of its names.
 //  The result type is `Stream[Artist with Persisted]`
 val hardRockArtists 
-  = Db.access[Artist]
+  = Db.query[Artist]
       .whereEquals("genres.item.names.value.item.value", "Hard Rock")
       .whereEquals("genres.item.names.key.code", "en")
       .fetch()

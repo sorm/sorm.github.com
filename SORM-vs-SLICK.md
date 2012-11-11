@@ -154,7 +154,7 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-Db.access[Coffee]
+Db.query[Coffee]
   .whereEqual("supplier.name", "Superior Coffee")
   .fetch()
 {% endhighlight %}
@@ -180,7 +180,7 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-Db.access[Coffee].whereSmaller("price", 9.0).fetch()
+Db.query[Coffee].whereSmaller("price", 9.0).fetch()
   .map(c => (c.name, c.supplier.name))
 {% endhighlight %}
     </td>
@@ -239,7 +239,7 @@ db.withSession {
     <td>
       <h3>SORM</h3>
 {% highlight scala %}
-val supplier = Db.access[Supplier]
+val supplier = Db.query[Supplier]
                  .whereEqual("name", "The High Ground")
                  .fetchOne()
 supplier.foreach(v => Db.save(coffee.copy(supplier = v)))

@@ -40,7 +40,7 @@ val artist = Db.save(Artist("Metallica"))
 {% endhighlight %}
     
 2. When you fetch it from the db: {% highlight scala %}
-val artist = Db.access[Artist].whereEqual("name", "Metallica").fetchOne().get
+val artist = Db.query[Artist].whereEqual("name", "Metallica").fetchOne().get
 {% endhighlight %}
 
 3. When you make a copy of an already persisted entity: {% highlight scala %}
@@ -75,7 +75,7 @@ val rock : Genre with Persisted
   = Db.save(Genre("Rock"))
 
 val metallica : Option[Artist with Persisted]
-  = Db.access[Artist]
+  = Db.query[Artist]
       .whereEqual("name", "Metallica")
       .fetchOne()   //  fetch an entity from db
                     //  (returns `Option[Artist with Persisted]`)

@@ -51,8 +51,8 @@ Db.save( Artist("Dire Straits", Set() + rock) )
 Retrieve values from the db:
 
 {% highlight scala %}
-val metallica = Db.access[Artist].whereEqual("name", "Metallica").fetchOne() // Option[Artist]
-val rockArtists = Db.access[Artist].whereEqual("genres.name", "Rock").fetch() // Stream[Artist]
+val metallica = Db.query[Artist].whereEqual("name", "Metallica").fetchOne() // Option[Artist]
+val rockArtists = Db.query[Artist].whereEqual("genres.name", "Rock").fetch() // Stream[Artist]
 {% endhighlight %}
 
 ##Installation and Latest Release Info
