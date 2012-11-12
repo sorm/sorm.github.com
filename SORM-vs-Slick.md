@@ -4,18 +4,31 @@ group: navigation
 layout: page
 ---
 <style>
-  table.vs { width: 100%; table-layout: fixed; }
-  .vs td { vertical-align: top; width: 100%; }
-
-  .vs td.separator { width: 30px; position: relative; }
-  .separator div { position: absolute; top: 36px; bottom: 36px; left: 50%; width: 1px; background-color: #777; }
-
 
   .footnotes { margin: 7px 0 14px 14px; }
   .footnotes p { font-size: smaller; line-height: 1.5; padding: 0;  }
 
   .yes { color: #A6E22E; }
   .no { color: #F92672; }
+
+
+  .vs { margin-left: 0; margin-right: 0; }
+  .vs > * { width: 49%; vertical-align: top; }
+
+  /* positioning */
+  .vs > * { display: inline-block; }
+
+  /* gaps fix */
+  .vs { font-size: 0; }
+  .vs > * { font-size: 14px; }
+
+  /* line */
+  .vs > * { padding-left: 1%; border-left: solid thin; }
+  .vs > :first-child { padding-right: 1%; padding-left: 0; border-left: none; }
+
+  /* wrap fix */
+  .vs { white-space: nowrap; }
+  .vs > * { white-space: normal; }
 
 </style>
 
@@ -28,10 +41,10 @@ case class Supplier ( name : String, street : String, city : String, state : Str
 
 
 ##Framework initialization
-<table class="vs">
-  <tr>
-    <td>
-      <h3>SORM</h3>
+
+<ul class="vs">
+  <li>
+<h3>SORM</h3>
 {% highlight scala %}
 import sorm._
 
@@ -40,10 +53,10 @@ object Db extends Instance (
   url = "jdbc:h2:mem:test"
 )
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
-      <h3>Slick</h3>
+
+  </li>
+  <li>
+<h3>Slick</h3>
 {% highlight scala %}
 import scala.slick.driver.H2Driver.simple._
 import Database.threadLocalSession
@@ -70,46 +83,37 @@ object Coffees extends Table[(String, Int, Double, Int, Int)]("COFFEES") {
 
 val db = Database.forURL("jdbc:h2:mem:test", driver = "org.h2.Driver")
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
+  </li>
+</ul>
 
 
 ##Connections management and pooling
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
       <p>Automatic</p>
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
       <p>Uses a single connection. Using 3rd-party connection poolers multiple connections can be achieved.</p>
-    </td>
-  </tr>
-</table>
-
+  </li>
+</ul>
 
 ##Database schema generation
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
       <p>Automatic</p>
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
 {% highlight scala %}
 db.withSession {
   (Suppliers.ddl ++ Coffees.ddl).create
 }
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
-
+  </li>
+</ul>
 
 ##Inserting
 
@@ -120,18 +124,16 @@ val supplier2 = Supplier("Superior Coffee", "1 Party Place", "Mendocino", "CA", 
 val supplier3 = Supplier("The High Ground", "100 Coffee Lane", "Meadows", "CA", "93966")
 {% endhighlight %}
 
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
 {% highlight scala %}
 Db.save(supplier1)
 Db.save(supplier2)
 Db.save(supplier3)
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
 {% highlight scala %}
 db.withSession {
@@ -140,27 +142,23 @@ db.withSession {
   Suppliers.insert(150, supplier3.name, supplier3.street, supplier3.city, supplier3.state, supplier3.zip)
 }
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
-
+  </li>
+</ul>
 
 
 ##Querying
 
 ###Collect Coffee instances having a supplier named "Superior Coffee"
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
 {% highlight scala %}
 Db.query[Coffee]
   .whereEqual("supplier.name", "Superior Coffee")
   .fetch()
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
 {% highlight scala %}
 db.withSession {
@@ -170,22 +168,18 @@ db.withSession {
   } yield Coffee(c.name, Supplier(s.name, s.street, s.city, s.state, s.zip), c.price, c.sales, c.total)
 }
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
-
+  </li>
+</ul>
 ###Collect just the names of coffee and supplier 
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
 {% highlight scala %}
 Db.query[Coffee].whereSmaller("price", 9.0).fetch()
   .map(c => (c.name, c.supplier.name))
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
 {% highlight scala %}
 db.withSession {
@@ -195,24 +189,20 @@ db.withSession {
   } yield (c.name, s.name)
 }
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
-
+  </li>
+</ul>
 
 ##Updating
 ###Update sales and total of an already fetched Coffee
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM*</h3>
 {% highlight scala %}
 Db.save(coffee.copy(sales = coffee.sales + 1, 
                     total = coffee.total + 23.4))
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick**</h3>
 {% highlight scala %}
 db.withSession {
@@ -224,9 +214,8 @@ db.withSession {
   }
 }
 {% endhighlight %}
-    </td>
-  </tr>
-</table>
+  </li>
+</ul>
 <div class="footnotes">
   <p>* SORM automatically identifies the fetched values with help of <a href="/api/#sorm.Persisted"><code>Persisted</code></a> trait. To learn more about how it works please visit <a href="/api/#sorm.Persisted">this page</a>.</p>
   <p>** In Slick the identifier of the row has to be manually managed, by either extending the model case class to include it, or storing it separately.</p>
@@ -234,9 +223,8 @@ db.withSession {
 
 <!-- 
 ###Update a coffee supplier to be the one having a name "The High Ground"
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
 {% highlight scala %}
 val supplier = Db.query[Supplier]
@@ -244,23 +232,19 @@ val supplier = Db.query[Supplier]
                  .fetchOne()
 supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
 {% endhighlight %}
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
       <p>???</p>
-    </td>
-  </tr>
-</table>
-
+  </li>
+  </ul>
 
  -->
 
 
 <h2>Supported databases</h2>
-<table class="vs">
-  <tr>
-    <td>
+<ul class="vs">
+  <li>
       <h3>SORM</h3>
       <ul>
         <li>MySQL</li>
@@ -268,9 +252,8 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
         <li>H2</li>
         <li>HSQLDB</li>
       </ul>
-    </td>
-    <td class="separator"><div></div></td>
-    <td>
+  </li>
+  <li>
       <h3>Slick</h3>
       <ul>
         <li>Derby</li>
@@ -282,6 +265,5 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
         <li>PostgreSQL</li>
         <li>SQLite</li>
       </ul>
-    </td>
-  </tr>
-</table>
+  </li>
+</ul>
