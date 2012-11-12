@@ -21,11 +21,11 @@ menu:
 ---
 <style>
 
-  * + h2 { padding-top: 28px }
-  * + h2 { margin-top: 28px }
-  * + h2 { border-top: solid 1px; }
+  hr { margin: 70px 14px 70px 14px; }
+  /*hr { background-color: grey; }*/
   
 </style>
+
 
 ## Initialization
 
@@ -89,6 +89,8 @@ Each time you launch your application SORM performs initialization. For purposes
 
 
 
+---
+
 ## Persisted trait and ids
 
 All the entities returned from SORM have a [`Persisted`](/api/#sorm.Persisted) trait with an appropriate value of `id` mixed in. This is what lets SORM decide whether to `INSERT` rows or `UPDATE` them (and which ones) when the `save` operation is called. This also provides you with access to its generated `id`.
@@ -132,6 +134,8 @@ val artist = someOtherPersistedArtist.copy(name = "METALLICA")
 {% endhighlight %}
 
 
+---
+
 ## Saving
 
 Let's assume you have a following model registered with SORM `Instance`:
@@ -173,6 +177,8 @@ Please note that the types are specified only for reference.
 
 
 
+---
+
 ## Querying
 
 All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create a [`Querier`](/api/#sorm.Querier) object, then modify it by calling different methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
@@ -213,6 +219,8 @@ The above implies `case class Artist ( name : String, genre : String )`
 
 
 
+---
+
 ## Transactions
 
 Transactions allow to perform multiple db-requests in such a way that when any failure occurs all the changes that were made with this transaction get cancelled. For most dbs transactions also provide guarantees that nothing will get changed in between the db-requests in multithreaded applications.
@@ -245,6 +253,8 @@ In this example transaction is used to ensure that the same task won't be fetche
 
 
 
+
+---
 
 ## Data Types
 
@@ -279,6 +289,8 @@ Standard Scala enumerations are supported
 
 
 
+
+---
 
 ## Tracing SQL
 
