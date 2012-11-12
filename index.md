@@ -11,10 +11,10 @@ SORM is a purely Scala-oriented object-relational mapping framework designed to 
 ##Features
 
 * **Complete abstraction from relational concepts**. You work with case classes, collections and other standard Scala data types instead of tables, rows, foreign keys and one-to-many relations.
-* **An intuitive, centralized connection-agnostic API of just a few methods**. No tangled implicit constructions and functionality scatterred accross multiple components. 
+* **An intuitive and centralized connection-agnostic API of just a few methods**. No tangled implicit constructions and functionality scatterred accross multiple components. 
 * **Automated schema generation**.
 * **Multithreading**. A single SORM instance can safely be used accross multiple threads.
-* **Integrated connections pooling with**. Scalable just by setting a "poolSize" parameter.
+* **Integrated connections pooling**. Scalable just by setting a "poolSize" parameter.
 
 ##A Quick Intro
 
