@@ -18,37 +18,27 @@ SORM is a purely Scala-oriented object-relational mapping framework designed to 
 
 ##A Quick Intro
 
-This is a complete example. No extra code is required for it to work.
-
-Declare a model:
+Following is a complete example. No extra code is required for it to work.
 
 {% highlight scala %}
+// Declare a model:
 case class Artist ( name : String, genres : Set[Genre] )
 case class Genre ( name : String ) 
-{% endhighlight %}
 
-Create a SORM instance, which automatically generates the schema:
-
-{% highlight scala %}
+// Initialize SORM, automatically generating schema:
 import sorm._
 object Db extends Instance (
   entities = Set() + Entity[Artist]() + Entity[Genre](),
   url = "jdbc:h2:mem:test"
 )
-{% endhighlight %}
 
-Store values in the db:
-
-{% highlight scala %}
+// Store values in the db:
 val metal = Db.save( Genre("Metal") )
 val rock = Db.save( Genre("Rock") )
 Db.save( Artist("Metallica", Set() + metal + rock) )
 Db.save( Artist("Dire Straits", Set() + rock) )
-{% endhighlight %}
 
-Retrieve values from the db:
-
-{% highlight scala %}
+// Retrieve values from the db:
 val metallica = Db.query[Artist].whereEqual("name", "Metallica").fetchOne() // Option[Artist]
 val rockArtists = Db.query[Artist].whereEqual("genres.name", "Rock").fetch() // Stream[Artist]
 {% endhighlight %}
