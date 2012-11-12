@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{% include JB/setup %}
+
+<style>
+  #portamento-wrapper {overflow: hidden;}
+  #portamento-sidebar {width:200px; padding:10px;float:right; height:400px;}
+  
+  #portamento_container {float:right; position:relative;} /* take the positioning of the sidebar, and become the start point for the sidebar positioning */
+  #portamento_container #portamento-sidebar {float:none; position:absolute;} /* no need to float anymore, become absolutely positoned */
+  #portamento_container #portamento-sidebar.fixed {position:fixed;} /* if the panel is sliding, it needs position:fixed */
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="/assets/portamento-min.js"></script>
+
+<div class="page-header">
+  <h1>
+    {{ page.title }} 
+    {% if page.tagline %}
+      <small>{{ page.tagline }}</small>
+    {% endif %}
+  </h1>
+</div>
+
+<div class="row">
+  <table id="portamento-wrapper">
+    <tr valign="top">
+      <td>
+        {{ content }}
+      </td>
+      <td>
+        <div id="portamento-sidebar">
+          <section>
+            <h3>Sections</h3>
+            <ol>
+            {% for a in page.menu %}
+              <li><a href="{{a.url}}">{{a.name}}</a></li>
+            {% endfor %}
+            </ol>
+          </section>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <script>
+    $('#portamento-sidebar').portamento({wrapper: $('#portamento-wrapper')}); // set #portamento-wrapper as the bottom boundary
+  </script>
+</div>
+
+<hr>
+
+<div class="row">
+  {% include JB/comments %}
+</div>
+

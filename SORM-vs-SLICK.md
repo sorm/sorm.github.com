@@ -291,7 +291,7 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
 <h2>Feature-wise comparison</h2>
 <table border="1" cellpadding="3">
   <tr>
-    <td width="300"><h3>Supported Feature</h3></td>
+    <td width="400"><h3>Supported Feature</h3></td>
     <td><h3>SORM</h3></td>
     <td><h3>Slick</h3></td>
   </tr>
@@ -367,5 +367,5 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
   </tr>
 </table>
 <div class="footnotes">
-  <p>* Provides an effective <a href="{{BASE_PATH}}/api/#sorm.Connection">fetchById</a> method, which accepts an id parameter, which you can manually fetch using, for example, the standard JDBC API.</p>
+  <p>* Provides an effective <a href="{{BASE_PATH}}/api/#sorm.Instance">fetchById</a> method, which accepts an id parameter, which you can manually fetch using, for example, the standard JDBC API.</p>
 </div>
