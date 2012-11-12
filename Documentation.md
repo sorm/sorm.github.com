@@ -2,7 +2,7 @@
 layout: with_menu
 title: Documentation
 group: navigation
-comments: false
+comments: true
 menu: 
   - name: Initialization
     url: "#initialization"
@@ -19,6 +19,13 @@ menu:
   - name: Tracing SQL
     url: "#tracing_sql"
 ---
+<style>
+
+  * + h2 { padding-top: 28px }
+  * + h2 { margin-top: 28px }
+  * + h2 { border-top: solid 1px; }
+  
+</style>
 
 ## Initialization
 
@@ -168,7 +175,7 @@ Please note that the types are specified only for reference.
 
 ## Querying
 
-All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create an `Querier` object, then modify it by calling different methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
+All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create a [`Querier`](/api/#sorm.Querier) object, then modify it by calling different methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
 
 ### Property path
 
@@ -248,7 +255,7 @@ Naturally, you represent your entities with them.
 `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`, `Long`, `Short`
 
 #### String
-Strings support has a wrapped logic: if a `String` property is specified as part of some kind of key (unique, index) on a relational side it is represented as a `VARCHAR` and thus is limited to have a maximum length of only 256 characters, otherwise it is represented as by a `MEDIUMBLOB` which is limited to ~16MB of data.
+Strings support has a wrapped logic: if a `String` property is specified as part of some kind of key (unique, index) on a relational side it is represented as a `VARCHAR` and thus is limited to have a maximum length of only 256 characters, otherwise it is represented as by a `CLOB` which is generally limited to ~4GB of data. I hope that's enough.
 
 #### Option
 Supported
