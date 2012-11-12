@@ -10,7 +10,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title: SORM
-tagline: An elegant and easily scalable way to do persistance in Scala
+tagline: An elegant and scalable way to do persistance in Scala
 author:
   name: Nikita Volkov
   email: nikita.y.volkov@mail.ru
