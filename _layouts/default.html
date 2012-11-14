@@ -1,140 +1,50 @@
----
-theme: 
-  name: hooligan
----
-{% include JB/setup %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>
-      {% if page.title %}
-        {{ page.title }} - 
-      {% endif %}
-      {{ site.title }}
-    </title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>{% if page.title %} {{ page.title }} - {% endif %} {{ site.title }}</title>
+  <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="{{site.baseurl}}/fonts/open-sans.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/reset.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/prose-bootstrap.css" />
+  <link rel="stylesheet" href="{{site.baseurl}}/css/main.css" />
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/colorful.css" /> -->
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/friendly.css" /> -->
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/github.css" /> -->
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/manni.css" /> -->
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/murphy.css" /> -->
+  <!-- <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/tango.css" /> -->
+  <link rel="stylesheet" href="{{site.baseurl}}/css/pygments/trac.css" />
+</head>
+<body>
+  <div id="container">
 
-
-    <script src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
-    <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
-
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">    
-    <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css-social-buttons/css/zocial.stripped.css" />
-    <link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ ASSET_PATH }}/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">    
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <style>
-      blockquote p { font-size: smaller; }
-      h3 { font-size: 20px; }
-      h3 { margin-bottom: 7px; }
-      h4 { font-size: 18px; }
-      h4 { margin-top: 7px; margin-bottom: 7px; }
-      li { margin-bottom: 7px; }
-      li { line-height: 1.5; }
-      .content strong, .content h1, .content h2, .content h3, .content h4 { color: #DDD; }
-    </style>
-  </head>
-
-  <body style="background-color: #2a2a2a;">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-
-
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-
-
-          <div>
-            <ul class="nav">
-              {% assign pages_list = site.pages %}
-              {% assign group = 'navigation' %}
-              {% include JB/pages_list %}
-            </ul>
-            <ul class="nav pull-right">
-              <li class="divider-vertical"></li>
-              {% for l in site.external_links %}
-                <li>
-                  <a href="{{ l.url }}" class="zocial" target="_blank">
-                    {{ l.name }}
-                  </a>
-                </li>
-              {% endfor %}
-              {% if site.github %}
-                <li>
-                  <a href="{{ site.github }}" class="zocial github icon" target="_blank">
-                    <span class="hidden-desktop">Github</span>
-                  </a>
-                </li>
-              {% endif %}
-              {% if site.author.github %}
-                <li>
-                  <a href="https://www.github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
-                    <span class="hidden-desktop">Github</span>
-                  </a>
-                </li>
-              {% endif %}
-              {% if site.author.googleplus %}
-                <li>
-                  <a href="https://profiles.google.com/{{ site.author.google }}" class="zocial googleplus icon" target="_blank">
-                    <span class="hidden-desktop">Google+</span>
-                  </a>
-                </li>
-              {% endif %}    
-              {% if site.author.twitter %}
-                <li>
-                  <a href="http://www.twitter.com/{{ site.author.twitter }}" class="zocial twitter icon" target="_blank">
-                  <span class="hidden-desktop">Twitter</span>
-                  </a>
-                </li>
-              {% endif %}                          
-              {% if site.author.facebook %}
-                <li>
-                  <a href="http://www.facebook.com/{{ site.author.facebook }}" class="zocial facebook icon" target="_blank">
-                    <span class="hidden-desktop">Facebook</span>
-                  </a>
-                </li>
-              {% endif %}           
-              {% if site.author.linkedin %}
-                <li>
-                  <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}" class="zocial linkedin icon" target="_blank">
-                    <span class="hidden-desktop">LinkedIn</span>
-                  </a>
-                </li>
-              {% endif %}                    
-              {% if site.author.feedburner %}
-                <li>
-                  <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}" class="zocial rss icon" target="_blank">
-                    <span class="hidden-desktop">FeedBurner</span>
-                  </a>
-                </li>
-              {% endif %}
-            </ul>
-          </div>
+    <div id="header">
+      <div class="navigation">
+        <a href="{{site.baseurl}}/" class="title">{{site.title}}</a>
+        {% for item in site.internal_links %}
+          | <a href="{{site.baseurl}}{{item.url}}">{{item.name}}</a>
+        {% endfor %}
+        <div style="float: right;">
+          {% for item in site.external_links %}
+            | <a href="{{site.baseurl}}{{item.url}}">{{item.name}}</a>
+          {% endfor %}
         </div>
       </div>
     </div>
+    <div id="main">
+      {{content}}
+    </div>
+  </div>
 
-    <div class="container">
-      <div class="content">
-        {{ content }}
-      </div>
+  <div id="footer">
+    <div id="copyright" class="footer-content">
+      <a href="{{site.copyright.url}}" target="_blank">{{site.copyright.text}}</a>. 
+      Using a modified <a href="http://bootstrap.prose.io/" target="_blank">Prose Bootstrap</a> theme.
+    </div>
+  </div>
 
-      <footer>
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://github.com/dhulihan/hooligan" target="_blank">The Hooligan Theme</a>
-        </p>
-      </footer>
-    </div> <!-- /container -->
-    {% include JB/analytics %}
-  </body>
+  <a href="{{site.github}}" target="_blank" id="fork-me-on-github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <!-- <a href="{{site.github}}" target="_blank" id="fork-me-on-github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a> -->
+</body>
 </html>
-

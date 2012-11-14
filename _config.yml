@@ -1,26 +1,34 @@
-# This is the default format. 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:year/:month/:day/:title 
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+auto: true
+server: true
 auto: true
 pygments: true
+exclude: 
+  - .gitignore
+  - README.md
+  # - Tutorial.md
+  # - Documentation.md
+  # - SORM-vs-Slick.md
 
-# Themes are encouraged to use these universal variables 
-# so be sure to set them if your theme uses them.
-#
+# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
+# permalink: /:categories/:year/:month/:day/:title 
+
 title: SORM
 tagline: An elegant and scalable way to do persistence in Scala
+
+prose:
+  rooturl: "_posts"
+  metadata: 
+    _posts/articles: |
+      published: false
+      layout: article
+      title: SORM
+      abstract: An elegant and scalable way to do persistence in Scala
+      categories:
+        - articles
+
 author:
   name: Nikita Volkov
   email: nikita.y.volkov@mail.ru
-  # https://github.com/nikita-volkov/sorm
-  # github: nikita-volkov
-  # twitter: username
-  # feedburner: feedname
-
-
-
 
 external_links: 
   - name: API
@@ -34,15 +42,17 @@ external_links:
 
 internal_links:
   - name: Documentation
-    url: /doc/
-  - name: SORM vs Slick
+    url: /Documentation.html
+  - name: SORM vs. Slick
     url: /SORM-vs-Slick.html
   - name: Tutorial
     url: /Tutorial.html
 
-# github: https://github.com/nikita-volkov/sorm
+github: https://github.com/nikita-volkov/sorm
 
-
+copyright: 
+  text: © Nikita Volkov, 2012
+  url: https://github.com/nikita-volkov
 
 
 
@@ -94,13 +104,6 @@ JB:
   #   /assets
   #
   ASSET_PATH: false
-
-  # These paths are to the main pages Jekyll-Bootstrap ships with.
-  # Some JB helpers refer to these paths; change theme here if needed.
-  #
-  archive_path: /archive.html
-  categories_path: /categories.html
-  tags_path: /tags.html
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.

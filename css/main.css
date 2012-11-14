@@ -1,0 +1,38 @@
+#copyright { text-align: right; font-size: 12px !important; }
+#header { color: #CCC; cursor: default; }
+#header a { color: #DDD; cursor: auto; }
+#header a:hover { color: #FFF; }
+#fork-me-on-github { position: absolute; top: 30px; right: 0; }
+#main { padding-top: 30px; }
+
+.intro {
+  background: #E0E7EB;
+  border-top: 1px solid #c3ccd0;
+  border-bottom: 1px solid #c3ccd0;
+  margin: 0;
+  padding: 0;
+}
+.intro .title {
+  width: 800px;
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+.intro h1 {
+  font-size: 36px; 
+  line-height: 1;
+  margin: 30px 0 30px 0;
+}
+.intro h1 small { font-size: 60%; font-weight: bold; color: #9AA }
+
+.highlight pre { white-space: pre-wrap; }
+.highlight code { padding: 0; }
+
+
+
+.footnotes p { font-size: smaller; line-height: 1.5; padding: 0; }
+.footnotes p { margin-top: 7px; margin-bottom: 7px; }
+.footnotes p:first-child { margin-top: 14px; }
+.footnotes p:last-child { margin-bottom: 20px; }
+
+strong { font-weight: bold; }
+

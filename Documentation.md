@@ -21,8 +21,7 @@ menu:
 ---
 <style>
 
-  hr { margin: 70px 14px 70px 14px; }
-  /*hr { background-color: grey; }*/
+  hr { margin: 70px 14px 70px 14px !important; }
   
 </style>
 

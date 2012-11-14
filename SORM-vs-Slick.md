@@ -1,19 +1,16 @@
 ---
-title: SORM vs Slick
+title: SORM vs. Slick
 group: navigation
 layout: page
 ---
 <style>
-
-  .footnotes { margin: 7px 0 14px 14px; }
-  .footnotes p { font-size: smaller; line-height: 1.5; padding: 0;  }
 
   .yes { color: #A6E22E; }
   .no { color: #F92672; }
 
 
   .vs { margin-left: 0; margin-right: 0; }
-  .vs > * { width: 49%; vertical-align: top; }
+  .vs > * { width: 50%; vertical-align: top; }
 
   /* positioning */
   .vs > * { display: inline-block; }
@@ -29,6 +26,8 @@ layout: page
   /* wrap fix */
   .vs { white-space: nowrap; }
   .vs > * { white-space: normal; }
+
+  ul.vs { padding: 0; margin: 0; list-style: none; }
 
 </style>
 
