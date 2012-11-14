@@ -2,6 +2,7 @@
 title: Tutorial
 group: navigation
 layout: page
+comments: true
 ---
 
 <style>

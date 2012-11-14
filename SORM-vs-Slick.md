@@ -2,6 +2,7 @@
 title: SORM vs. Slick
 group: navigation
 layout: page
+comments: true
 ---
 <style>
 
