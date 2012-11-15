@@ -9,22 +9,9 @@ exclude:
   # - Documentation.md
   # - SORM-vs-Slick.md
 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-# permalink: /:categories/:year/:month/:day/:title 
 
 title: SORM
 tagline: An elegant and scalable way to do persistence in Scala
-
-prose:
-  rooturl: "_posts"
-  metadata: 
-    _posts/articles: |
-      published: false
-      layout: article
-      title: SORM
-      abstract: An elegant and scalable way to do persistence in Scala
-      categories:
-        - articles
 
 author:
   name: Nikita Volkov
