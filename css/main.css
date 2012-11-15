@@ -1,6 +1,6 @@
 #copyright { text-align: right; font-size: 12px !important; }
 #header { color: #CCC; cursor: default; }
-#header a { color: #DDD; cursor: auto; }
+#header a { color: #DDD; cursor: pointer; }
 #header a:hover { color: #FFF; }
 #fork-me-on-github { position: absolute; top: 30px; right: 0; }
 #main { padding-top: 30px; }
