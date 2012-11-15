@@ -71,7 +71,8 @@
     font-style: italic;
 
 }
-
+/*Firefox bug makes it all bold*/
+/*
 @font-face {
     font-family: 'OpenSans';
     src: url('OpenSans-Bold-webfont.eot');
@@ -95,3 +96,4 @@
     font-style: italic;
 
 }
+*/
