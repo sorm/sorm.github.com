@@ -1,0 +1,49 @@
+---
+layout: titled
+---
+<style>
+  #portamento_container .sidebar {
+    position:absolute; 
+    left:0;
+    top:0;
+  }
+  #portamento_container .sidebar.fixed {
+    position:fixed; 
+    left:auto;
+    top:auto;
+  }
+  .layout.content {
+    position:relative; 
+    margin-left: auto; margin-right: auto;
+    width: 800px;
+    min-height: 600px;
+  }
+  .layout.sidebar {
+    margin-left: 800px;
+    width: 150px; 
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+  .layout.sidebar *:first-child { margin-top: 0; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="/js/portamento-min.js"></script>
+<div class="article-wrapper">
+  <div class="layout content help post-content">
+    {{content}}
+    <div class="layout sidebar">
+      <section>
+        <h3>Sections</h3>
+        <ol>
+        {% for a in page.navigation %}
+          <li><a href="#{{a.anchor}}">{{a.name}}</a></li>
+        {% endfor %}
+        </ol>
+      </section>
+    </div>
+  </div>
+  <script>
+    $('.layout.content .layout.sidebar').portamento({wrapper: $('.layout.content')})
+  </script>
+</div>
+

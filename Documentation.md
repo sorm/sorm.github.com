@@ -1,23 +1,23 @@
 ---
-layout: with_menu
+layout: with_navigation
 title: Documentation
 group: navigation
 comments: true
-menu: 
+navigation: 
   - name: Initialization
-    url: "#initialization"
+    anchor: initialization
   - name: Persisted trait and ids
-    url: "#persisted_trait_and_ids"
+    anchor: persisted_trait_and_ids
   - name: Saving
-    url: "#saving"
+    anchor: saving
   - name: Querying
-    url: "#querying"
+    anchor: querying
   - name: Transactions
-    url: "#transactions"
+    anchor: transactions
   - name: Data Types
-    url: "#data_types"
+    anchor: data_types
   - name: Tracing SQL
-    url: "#tracing_sql"
+    anchor: tracing_sql
 keywords:
   - SORM Documentation
   - Documentation
