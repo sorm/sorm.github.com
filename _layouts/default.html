@@ -2,8 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8" />
+  <meta name="keywords" content="{% if page.keywords %}{{page.keywords | join: ','}},{{site.keywords | join: ','}}{% else %}{{site.keywords | join: ','}}{% endif %}" />
+  <meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
+  
   <title>{% if page.title %} {{ page.title }} - {% endif %} {{ site.title }}</title>
-  <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
+  {% if site.favicon %}
+  <link rel="shortcut icon" href="{{site.baseurl}}{{site.favicon}}" type="image/x-icon" />
+  {% endif %}
   <link rel="stylesheet" href="{{site.baseurl}}/fonts/open-sans.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/css/reset.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/css/prose-bootstrap.css" />

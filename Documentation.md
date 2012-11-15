@@ -18,6 +18,11 @@ menu:
     url: "#data_types"
   - name: Tracing SQL
     url: "#tracing_sql"
+keywords:
+  - SORM Documentation
+  - Documentation
+  - SORM Reference
+  - Reference
 ---
 <style>
 

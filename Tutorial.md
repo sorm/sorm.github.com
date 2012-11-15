@@ -3,6 +3,9 @@ title: Tutorial
 group: navigation
 layout: page
 comments: true
+keywords:
+  - SORM Tutorial
+  - Tutorial
 ---
 
 <style>

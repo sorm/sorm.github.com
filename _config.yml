@@ -12,6 +12,13 @@ exclude:
 
 title: SORM
 tagline: An elegant and scalable way to do persistence in Scala
+description:
+  A pure case-classes oriented ORM framework for Scala
+keywords:
+  - SORM
+  - SORM Framework
+  - Scala ORM
+  - Case Class ORM
 
 author:
   name: Nikita Volkov

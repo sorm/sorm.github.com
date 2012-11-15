@@ -4,6 +4,10 @@ title: Introduction
 header: SORM
 tagline: An elegant and scalable way to do persistence in Scala 
 comments: false
+keywords: 
+  - SORM Introduction
+  - Introcuction
+  - Home
 ---
 
 SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity.
