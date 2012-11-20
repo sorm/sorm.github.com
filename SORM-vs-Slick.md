@@ -51,7 +51,8 @@ case class Supplier ( name : String, street : String, city : String, state : Str
 import sorm._
 
 object Db extends Instance (
-  entities = Set( Entity[Coffee](), Entity[Supplier]() ),
+  entities = Set( Entity[Coffee](), 
+                  Entity[Supplier]() ),
   url = "jdbc:h2:mem:test"
 )
 {% endhighlight %}
@@ -74,7 +75,8 @@ object Suppliers extends Table[(Int, String, String, String, String, String)]("S
 }
 
 object Coffees extends Table[(String, Int, Double, Int, Int)]("COFFEES") {
-  def name = column[String]("COF_NAME", O.PrimaryKey)
+  def name = column[String]("COF_NAME", 
+                            O.PrimaryKey)
   def supID = column[Int]("SUP_ID")
   def price = column[Double]("PRICE")
   def sales = column[Int]("SALES")
@@ -211,8 +213,8 @@ db.withSession {
   val q = for(c <- Coffees if c.id === id) 
           yield (c.sales, c.total)
   q.foreach { case (sales, total) =>
-    Coffees.sales ~ Coffees.total update (sales + 1, 
-                                          total + 23.4)
+    (Coffees.sales ~ Coffees.total)
+      .update (sales + 1, total + 23.4)
   }
 }
 {% endhighlight %}
