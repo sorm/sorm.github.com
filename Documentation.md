@@ -148,6 +148,10 @@ or use a special method `fetchById`, which will either return the appropriate en
 Db.fetchById[Artist](234)
 {% endhighlight %}
 
+### What should you do when you need to specify the id yourself?
+
+Nothing. You shouldn't do that. The `id` property is supposed to be generated and managed by db only. If you need to specify some external unique identifier, like, for instance, Amazon's ASIN, just add an appropriate field to your entity and specify it as unique on SORM instantiation. 
+
 ---
 
 ## Saving
