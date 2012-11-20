@@ -137,6 +137,16 @@ val artist = Db.query[Artist].whereEqual("name", "Metallica").fetchOne().get
 val artist = someOtherPersistedArtist.copy(name = "METALLICA")
 {% endhighlight %}
 
+### What should you do when you need an entity by id?
+
+Either do a standard fetch, which will return an `Option`:
+{% highlight scala %}
+Db.query[Artist].whereEqual("id", 234).fetchOne()
+{% endhighlight %}
+or use a special method `fetchById`, which will either return the appropriate entity or fail if it doesn't exist:
+{% highlight scala %}
+Db.fetchById[Artist](234)
+{% endhighlight %}
 
 ---
 
