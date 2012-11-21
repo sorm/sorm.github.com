@@ -49,3 +49,11 @@ strong { font-weight: bold; }
 h1, h2, h3, h4, h5, strong { color: #4c5254; }
 h1 small { color: #757d80; }
 html, body { color: #5e6669; }
+
+
+
+/* Font sizes */
+.post-content h4 { font-size: 16px; }
+
+/* Line margins */
+.post-content h3, .post-content h4 { margin-top: 20px; }
