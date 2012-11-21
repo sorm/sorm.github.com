@@ -305,8 +305,13 @@ Standard Scala enumerations are supported
 * `org.joda.time.LocalDate` - to represent any date of current era without a timezone
 * `org.joda.time.LocalTime` - to represent a time without a timezone
 
+### So what do you get from this "support"?
+You can seamlessly persist and query even the most ridiculously complex data structures, such as the following:
 
-
+{% highlight scala %}
+case class A ( map : Map[B, List[Set[(Int, String, Range)]]] ) 
+case class B ( name : String )
+{% endhighlight %}
 
 ---
 
