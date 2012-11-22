@@ -17,8 +17,10 @@ description:
 keywords:
   - SORM
   - SORM Framework
-  - Scala ORM
+  - Functional ORM
   - Case Class ORM
+  - ORM
+  - Scala 
 
 author:
   name: Nikita Volkov
