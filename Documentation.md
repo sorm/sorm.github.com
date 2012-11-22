@@ -213,18 +213,53 @@ val artists
 
 With the query above we've fetched three artists which have neither pop or rock in the set of its genres. The results are ordered by artist name.
 
+
 ### Property path
 
-All modifier methods of [`Querier`](http://nikita-volkov.github.com/sorm/api/#sorm.Querier) accept a `String` value as a first parameter. This value specifies a path to a symbol in a tree of the accessed entity. This path is specified as a dot-delimited nodes. 
+All modifier methods of [`Querier`](http://nikita-volkov.github.com/sorm/api/#sorm.Querier) accept a `String` value as a first parameter. This value specifies a path to a symbol in a tree of the accessed entity. Path is specified as dot-delimited nodes. 
 
-For example, a path value `"genres.item.name"` can refer to a property `name` of an entity stored in a `Seq` which is a value of a `genres` property of the entity being accessed.
+#### Path tree nodes reference
 
-Following is a reference on what the nodes can be.
 * Property. A name of a property
 * Tuple item index. Same as in Scala: `_3` will refer to a third item of a tuple
 * Range `start` and `end`
 * Option, Seq, Set `item`
 * Map `key` and `value`
+
+#### Example path tree
+
+Here's a decomposed tree of an `Artist` object taken from the [Tutorial](/Tutorial.html) with types explained:
+    
+      Path Tree         |   Type Tree
+    --------------------+----------------------------------
+      *                 |   Artist
+      - names           |   - Map[Locale, Seq[String]]
+      | - key           |   | - Locale
+      | | - code        |   | | - String
+      | - value         |   | - Seq[String]
+      |   - item        |   |   - String
+      - genres          |   - Set[Genre]
+        - item          |     - Genre
+          - names       |       - Map[Locale, Seq[String]]
+            - key       |         - Locale
+            | - code    |         | - String
+            - value     |         - Seq[String]
+              - item    |           - String
+
+Here's the assumed model:
+{% highlight scala %}
+case class Artist ( names : Map[Locale, Seq[String]], genres : Set[Genre] )
+case class Genre ( names : Map[Locale, Seq[String]] )
+case class Locale ( code : String )
+{% endhighlight %}
+
+Keeping the above table in mind here's how we can query for artists having "pop" among the names of their genres:
+{% highlight scala %}
+Db.query[Artist].whereEqual("genres.item.names.value.item", "pop").fetch()
+// or
+Db.query[Artist].whereContains("genres.item.names.value", "pop").fetch()
+{% endhighlight %}
+
 
 ### The "or" conditions and DSL
 
