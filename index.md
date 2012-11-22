@@ -10,7 +10,7 @@ keywords:
   - Home
 ---
 
-SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity.
+SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity embracing functional programming concepts.
 
 ##Features
 
