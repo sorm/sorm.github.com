@@ -16,11 +16,13 @@ description:
   A pure case-classes oriented ORM framework for Scala
 keywords:
   - SORM Framework
-  - Functional ORM
+  - Functional ORM Scala
   - Case Classes ORM
   - Immutable Class
-  - Case Class
   - Immutable Data
+  - Case Class
+  - Immutable
+  - Functional
   - SORM
   - ORM
   - Scala 
