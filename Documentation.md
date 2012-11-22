@@ -211,7 +211,7 @@ val artists
       .fetch() // the sql query gets emitted only at this point
 {% endhighlight %}
 
-With the query above we've fetched three artists which have neither pop or rock in the set of its generes. The results are ordered by artist name.
+With the query above we've fetched three artists which have neither pop or rock in the set of its genres. The results are ordered by artist name.
 
 ### Property path
 
