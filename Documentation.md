@@ -199,7 +199,19 @@ Please note that the types are specified only for reference.
 
 ## Querying
 
-All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create a [`Querier`](/api/#sorm.Querier) object, then modify it by calling different methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
+All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create an immutable [`Querier`](/api/#sorm.Querier) object, then stack different "modifier" methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern, just the functional way. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
+
+{% highlight scala %}
+val artists
+  = Db.query[Artist]
+      .whereNotContains("genre", pop)
+      .limit(3) // The order of "modifier methods" doesn't matter much
+      .orderBy("name")
+      .whereNotContains("genre", rock) // Stacking "where" clauses produces the "and" logic
+      .fetch() // the sql query gets emitted only at this point
+{% endhighlight %}
+
+With the query above we've fetched three artists which have neither pop or rock in the set of its generes. The results are ordered by artist name.
 
 ### Property path
 
