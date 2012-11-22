@@ -15,10 +15,13 @@ tagline: An elegant and scalable way to do persistence in Scala
 description:
   A pure case-classes oriented ORM framework for Scala
 keywords:
-  - SORM
   - SORM Framework
   - Functional ORM
-  - Case Class ORM
+  - Case Classes ORM
+  - Immutable Class
+  - Case Class
+  - Immutable Data
+  - SORM
   - ORM
   - Scala 
 
