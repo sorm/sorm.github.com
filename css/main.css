@@ -24,8 +24,10 @@
 }
 .intro h1 small { font-size: 60%; font-weight: bold; }
 
-.highlight pre { white-space: pre-wrap; }
-.highlight code { padding: 0; }
+/* fix the first line indent */
+.post-content pre { white-space: pre-wrap; }
+.post-content code { padding: 0; }
+.post-content p code, .post-content li code { padding: 4px; }
 
 
 
