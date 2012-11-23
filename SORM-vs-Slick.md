@@ -221,7 +221,7 @@ db.withSession {
   </li>
 </ul>
 <div class="footnotes">
-  <p>* SORM automatically identifies the fetched values with help of <a href="/api/#sorm.Persisted"><code>Persisted</code></a> trait. To learn more about how it works please visit <a href="/api/#sorm.Persisted">this page</a>.</p>
+  <p>* SORM automatically identifies the fetched values with help of <a href="/api/#sorm.Persisted"><code>Persisted</code></a> trait. To learn more about how it works please visit <a href="/Documentation.html#persisted_trait_and_ids">this page</a>.</p>
   <p>** In Slick the identifier of the row has to be manually managed, by either extending the model case class to include it, or storing it separately.</p>
 </div>
 
