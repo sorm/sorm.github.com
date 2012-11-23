@@ -5,6 +5,8 @@ layout: page
 comments: true
 keywords: 
   - SORM vs Slick
+  - Slick
+  - Comparison
 ---
 <style>
 
