@@ -5,8 +5,6 @@ layout: page
 comments: true
 keywords: 
   - SORM vs Slick
-alias:
-  - /pages/SORM-vs-SLICK.html
 ---
 <style>
 
