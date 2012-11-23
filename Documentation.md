@@ -335,6 +335,9 @@ Strings support has a wrapped logic: if a `String` property is specified as part
 #### Option
 Supported
 
+#### Either
+Not supported. Support may come in future releases. You can speed it up by voting for it on the [issue tracker](https://github.com/nikita-volkov/sorm/issues).
+
 #### Collections
 General types of immutable collections: `Seq`, `Set` and `Map` - are all supported. Please note that you should always use these general types instead of specific ones, i.e. `Seq` instead of `List`, `IndexedSeq` or `Vector` and etc.
 
@@ -359,6 +362,9 @@ You can seamlessly persist and query even the most ridiculously complex data str
 case class A ( map : Map[B, List[Set[(Int, String, Range)]]] ) 
 case class B ( name : String )
 {% endhighlight %}
+
+
+
 
 ---
 
