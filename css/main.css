@@ -26,8 +26,7 @@
 
 /* fix the first line indent */
 .post-content pre { white-space: pre-wrap; }
-.post-content code { padding: 0; }
-.post-content p code, .post-content li code { padding: 4px; }
+.post-content pre code { padding: 0; }
 
 
 
