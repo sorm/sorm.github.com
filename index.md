@@ -43,8 +43,10 @@ Db.save( Artist("Metallica", Set() + metal + rock) )
 Db.save( Artist("Dire Straits", Set() + rock) )
 
 // Retrieve values from the db:
-val metallica = Db.query[Artist].whereEqual("name", "Metallica").fetchOne() // Option[Artist]
-val rockArtists = Db.query[Artist].whereEqual("genres.name", "Rock").fetch() // Stream[Artist]
+// Option[Artist with Persisted]:
+val metallica = Db.query[Artist].whereEqual("name", "Metallica").fetchOne() 
+// Stream[Artist with Persisted]:
+val rockArtists = Db.query[Artist].whereEqual("genres.item.name", "Rock").fetch() 
 {% endhighlight %}
 
 ##Installation and Latest Release Info
