@@ -330,7 +330,7 @@ Naturally, you represent your entities with them.
 `Boolean`, `Byte`, `Char`, `Double`, `Float`, `Int`, `Long`, `Short`
 
 #### String
-Strings support has a wrapped logic: if a `String` property is specified as part of some kind of key (unique, index) on a relational side it is represented as a `VARCHAR` and thus is limited to have a maximum length of only 256 characters, otherwise it is represented as by a `CLOB` which is generally limited to ~4GB of data. I hope that's enough.
+Strings support has a wrapped logic: if a `String` property is specified as part of some kind of key (unique, index) on a relational side it is represented as a `VARCHAR` and is limited to have a maximum length of only 256 characters, otherwise it is represented by a `CLOB` which is generally limited to ~4GB of data. I hope that's enough.
 
 #### Option
 Supported
