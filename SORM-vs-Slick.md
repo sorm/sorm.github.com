@@ -97,11 +97,14 @@ val db = Database.forURL("jdbc:h2:mem:test", driver = "org.h2.Driver")
 <ul class="vs">
   <li>
       <h3>SORM</h3>
-      <p>Automatic</p>
+      <p>Automatic. Integrated connection pooler.</p>
   </li>
   <li>
       <h3>Slick</h3>
-      <p>Uses a single connection. Using 3rd-party connection poolers multiple connections can be achieved.</p>
+      <ul>
+        <li>Uses a single connection. With help of 3rd-party connection poolers multiple connections can be achieved.</li>
+        <li>All db-requests must be wrapped with a <code>db.withSession { ... }</code> block.</li>
+      </ul>
   </li>
 </ul>
 
