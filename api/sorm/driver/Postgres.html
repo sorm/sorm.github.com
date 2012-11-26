@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Postgres - SORM 0.3.0 API - sorm.driver.Postgres</title>
-          <meta name="description" content="Postgres - SORM 0.3.0 API - sorm.driver.Postgres" />
-          <meta name="keywords" content="Postgres SORM 0.3.0 API sorm.driver.Postgres" />
+          <title>Postgres - SORM 0.3.1 API - sorm.driver.Postgres</title>
+          <meta name="description" content="Postgres - SORM 0.3.1 API - sorm.driver.Postgres" />
+          <meta name="keywords" content="Postgres SORM 0.3.1 API sorm.driver.Postgres" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -239,7 +239,20 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="sorm.driver.Postgres">Postgres</a> → <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a> → <a href="StdTransaction.html" class="extype" name="sorm.driver.StdTransaction">StdTransaction</a> → <a href="StdDropTables.html" class="extype" name="sorm.driver.StdDropTables">StdDropTables</a> → <a href="StdModify.html" class="extype" name="sorm.driver.StdModify">StdModify</a> → <a href="StdNow.html" class="extype" name="sorm.driver.StdNow">StdNow</a> → <a href="StdDropAllTables.html" class="extype" name="sorm.driver.StdDropAllTables">StdDropAllTables</a> → <a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a></dd></dl></div>
-    </li><li name="sorm.driver.StdCreateTable#createTable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="sorm.driver.Postgres#createIndexDdl" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createIndexDdl(table:String,columns:Seq[String]):String"></a>
+      <a id="createIndexDdl(String,Seq[String]):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createIndexDdl</span><span class="params">(<span name="table">table: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="columns">columns: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="sorm.driver.Postgres#createTable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="createTable(table:sorm.ddl.Table):Unit"></a>
       <a id="createTable(Table):Unit"></a>
       <h4 class="signature">
@@ -251,7 +264,7 @@
         <span class="name">createTable</span><span class="params">(<span name="table">table: <a href="../ddl/package$$Table.html" class="extype" name="sorm.ddl.Table">Table</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="sorm.driver.Postgres">Postgres</a> → <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a> → <a href="DriverConnection.html" class="extype" name="sorm.driver.DriverConnection">DriverConnection</a></dd></dl></div>
     </li><li name="sorm.driver.StdSqlRendering#data" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="data(sql:sorm.sql.Sql):Stream[Any]"></a>
       <a id="data(Sql):Stream[Any]"></a>
@@ -385,7 +398,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="sorm.driver.StdCreateTable#indexDdl" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="sorm.driver.Postgres#indexDdl" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="indexDdl(columns:Seq[String]):String"></a>
       <a id="indexDdl(Seq[String]):String"></a>
       <h4 class="signature">
@@ -397,7 +410,7 @@
         <span class="name">indexDdl</span><span class="params">(<span name="columns">columns: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="sorm.driver.Postgres">Postgres</a> → <a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></dd></dl></div>
     </li><li name="sorm.driver.StdModify#insert" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="insert(table:String,values:Iterable[(String,Any)]):Unit"></a>
       <a id="insert(String,Iterable[(String,Any)]):Unit"></a>
@@ -502,6 +515,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="StdCreateTable.html" class="extype" name="sorm.driver.StdCreateTable">StdCreateTable</a></dd></dl></div>
+    </li><li name="sorm.driver.StdQuery#query" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="query[T](s:sorm.jdbc.Statement)(parse:sorm.jdbc.ResultSetView=&gt;T):T"></a>
+      <a id="query[T](Statement)((ResultSetView)⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">query</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="s">s: <a href="../jdbc/package$$Statement.html" class="extype" name="sorm.jdbc.Statement">Statement</a></span>)</span><span class="params">(<span name="parse">parse: (<a href="../jdbc/ResultSetView.html" class="extype" name="sorm.jdbc.ResultSetView">ResultSetView</a>) ⇒ <span class="extype" name="sorm.driver.StdQuery.query.T">T</span></span>)</span><span class="result">: <span class="extype" name="sorm.driver.StdQuery.query.T">T</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StdQuery.html" class="extype" name="sorm.driver.StdQuery">StdQuery</a></dd></dl></div>
     </li><li name="sorm.driver.StdQuery#query" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="query[T](asql:sorm.abstractSql.AbstractSql.Statement)(parse:sorm.jdbc.ResultSetView=&gt;T):T"></a>
       <a id="query[T](Statement)((ResultSetView)⇒T):T"></a>

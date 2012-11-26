@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Comparison - SORM 0.3.1 API - sorm.abstractSql.AbstractSql.Comparison</title>
-          <meta name="description" content="Comparison - SORM 0.3.1 API - sorm.abstractSql.AbstractSql.Comparison" />
-          <meta name="keywords" content="Comparison SORM 0.3.1 API sorm.abstractSql.AbstractSql.Comparison" />
+          <title>Statement - SORM 0.3.1 API - sorm.jdbc.Statement</title>
+          <meta name="description" content="Statement - SORM 0.3.1 API - sorm.jdbc.Statement" />
+          <meta name="keywords" content="Statement SORM 0.3.1 API sorm.jdbc.Statement" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
-            var hash = 'sorm.abstractSql.AbstractSql$$Comparison';
+            var hash = 'sorm.jdbc.package$$Statement$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -27,26 +27,26 @@
    	  </script>
     
         </head>
-        <body class="type">
+        <body class="value">
       <div id="definition">
-        <img src="../../lib/class_big.png" />
-        <p id="owner"><a href="../package.html" class="extype" name="sorm">sorm</a>.<a href="package.html" class="extype" name="sorm.abstractSql">abstractSql</a>.<a href="AbstractSql$.html" class="extype" name="sorm.abstractSql.AbstractSql">AbstractSql</a></p>
-        <h1>Comparison</h1>
+        <a href="package$$Statement.html" title="Go to companion"><img src="../../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="sorm">sorm</a>.<a href="package.html" class="extype" name="sorm.jdbc">jdbc</a></p>
+        <h1><a href="package$$Statement.html" title="Go to companion">Statement</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">case class</span>
+        <span class="modifier"></span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Comparison</span><span class="params">(<span name="table">table: <a href="AbstractSql$$Table.html" class="extype" name="sorm.abstractSql.AbstractSql.Table">Table</a></span>, <span name="column">column: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="operator">operator: <a href="AbstractSql$$Operator.html" class="extype" name="sorm.abstractSql.AbstractSql.Operator">Operator</a></span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="AbstractSql$$Condition.html" class="extype" name="sorm.abstractSql.AbstractSql.Condition">Condition</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Statement</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="AbstractSql$$Condition.html" class="extype" name="sorm.abstractSql.AbstractSql.Condition">Condition</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -64,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="sorm.abstractSql.AbstractSql.Comparison"><span>Comparison</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="sorm.abstractSql.AbstractSql.Condition"><span>Condition</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="sorm.jdbc.Statement"><span>Statement</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -82,23 +82,7 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="sorm.abstractSql.AbstractSql.Comparison#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(table:sorm.abstractSql.AbstractSql.Table,column:String,operator:sorm.abstractSql.AbstractSql.Operator,value:Any):sorm.abstractSql.AbstractSql.Comparison"></a>
-      <a id="&lt;init&gt;:Comparison"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">Comparison</span><span class="params">(<span name="table">table: <a href="AbstractSql$$Table.html" class="extype" name="sorm.abstractSql.AbstractSql.Table">Table</a></span>, <span name="column">column: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="operator">operator: <a href="AbstractSql$$Operator.html" class="extype" name="sorm.abstractSql.AbstractSql.Operator">Operator</a></span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
+        
 
         
 
@@ -200,19 +184,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="sorm.abstractSql.AbstractSql.Comparison#column" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="column:String"></a>
-      <a id="column:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">column</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -226,6 +197,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -252,6 +236,19 @@
       </span>
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -307,16 +304,16 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="sorm.abstractSql.AbstractSql.Comparison#operator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="operator:sorm.abstractSql.AbstractSql.Operator"></a>
-      <a id="operator:Operator"></a>
+    </li><li name="sorm.jdbc.Statement#simple" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="simple(sql:String,data:Seq[Any]):sorm.jdbc.package.Statement"></a>
+      <a id="simple(String,Seq[Any]):Statement"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">operator</span><span class="result">: <a href="AbstractSql$$Operator.html" class="extype" name="sorm.abstractSql.AbstractSql.Operator">Operator</a></span>
+        <span class="name">simple</span><span class="params">(<span name="sql">sql: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="data">data: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>] = <span class="symbol">Nil</span></span>)</span><span class="result">: <a href="package$$Statement.html" class="extype" name="sorm.jdbc.Statement">Statement</a></span>
       </span>
       </h4>
       
@@ -333,32 +330,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="sorm.abstractSql.AbstractSql.Comparison#table" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="table:sorm.abstractSql.AbstractSql.Table"></a>
-      <a id="table:Table"></a>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">table</span><span class="result">: <a href="AbstractSql$$Table.html" class="extype" name="sorm.abstractSql.AbstractSql.Table">Table</a></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      
-    </li><li name="sorm.abstractSql.AbstractSql.Comparison#value" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="value:Any"></a>
-      <a id="value:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">value</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
-      </span>
-      </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -420,12 +404,6 @@
               <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="scala.Product">
-              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
-            </div><div class="parent" name="scala.Equals">
-              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
-            </div><div class="parent" name="sorm.abstractSql.AbstractSql.Condition">
-              <h3>Inherited from <a href="AbstractSql$$Condition.html" class="extype" name="sorm.abstractSql.AbstractSql.Condition">Condition</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
