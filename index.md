@@ -8,6 +8,11 @@ keywords:
   - SORM Introduction
   - Introcuction
   - Home
+  - Akka
+  - Actors
+  - Concurrency
+  - Multithreading
+  - Pooling
 ---
 
 SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity embracing functional programming concepts.
@@ -17,7 +22,7 @@ SORM is a purely Scala-oriented object-relational mapping framework designed to 
 * **Complete abstraction from relational concepts**. You work with case classes, collections and other standard Scala data types instead of tables, rows, foreign keys and one-to-many relations.
 * **An intuitive and centralized connection-agnostic API of just a few methods**. No tangled implicit constructions and functionality scatterred accross multiple components. 
 * **Automated schema generation**.
-* **Multithreading**. A single SORM instance can safely be used accross multiple threads.
+* **Multithreading**. A single SORM instance can safely be used accross multiple threads and seamlessly integrates into actor-based concurrent systems, like Akka.
 * **Integrated connections pooling**. Scalable just by setting a "poolSize" parameter.
 
 ##A Quick Intro
