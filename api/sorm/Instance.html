@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Instance - SORM 0.3.3 API - sorm.Instance</title>
-          <meta name="description" content="Instance - SORM 0.3.3 API - sorm.Instance" />
-          <meta name="keywords" content="Instance SORM 0.3.3 API sorm.Instance" />
+          <title>Instance - SORM 0.3.4 API - sorm.Instance</title>
+          <meta name="description" content="Instance - SORM 0.3.4 API - sorm.Instance" />
+          <meta name="keywords" content="Instance SORM 0.3.4 API sorm.Instance" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -422,32 +422,18 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="sorm.Instance.Api#now" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="now():org.joda.time.DateTime"></a>
-      <a id="now():DateTime"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">now</span><span class="params">()</span><span class="result">: <span class="extype" name="org.joda.time.DateTime">DateTime</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Current DateTime at DB server.</p><div class="fullcomment"><div class="comment cmt"><p>Current DateTime at DB server. Effectively fetches the date only once to calculate the deviation.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Instance$$Api.html" class="extype" name="sorm.Instance.Api">Api</a></dd></dl></div>
-    </li><li name="sorm.Instance.Api#nowMillis" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="nowMillis:()=&gt;Long"></a>
-      <a id="nowMillis:()⇒Long"></a>
+      <a id="now:()=&gt;org.joda.time.DateTime"></a>
+      <a id="now:()⇒DateTime"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">nowMillis</span><span class="result">: () ⇒ <span class="extype" name="scala.Long">Long</span></span>
+        <span class="name">now</span><span class="result">: () ⇒ <span class="extype" name="org.joda.time.DateTime">DateTime</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Current time at DB server in milliseconds.</p><div class="fullcomment"><div class="comment cmt"><p>Current time at DB server in milliseconds. Effectively fetches the date only once to calculate the deviation.
+      <p class="shortcomment cmt">Current DateTime at DB server.</p><div class="fullcomment"><div class="comment cmt"><p>Current DateTime at DB server. Effectively fetches the date only once to calculate the deviation.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Instance$$Api.html" class="extype" name="sorm.Instance.Api">Api</a></dd></dl></div>
     </li><li name="sorm.Instance.Api#query" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="query[T&lt;:AnyRef](implicitevidence$2:reflect.runtime.universe.TypeTag[T]):sorm.Querier[T]"></a>
@@ -586,7 +572,27 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="sorm.Instance.Api#nowMillis" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nowMillis():Long"></a>
+      <a id="nowMillis():Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: now().getMillis should be used instead">nowMillis</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Current time at DB server in milliseconds.</p><div class="fullcomment"><div class="comment cmt"><p>Current time at DB server in milliseconds. Effectively fetches the date only once to calculate the deviation.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Instance$$Api.html" class="extype" name="sorm.Instance.Api">Api</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>now().getMillis should be used instead</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
