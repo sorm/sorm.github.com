@@ -288,11 +288,11 @@ The above implies `case class Artist ( name : String, genre : String )`
 
 ## Transactions
 
-Transactions allow to perform multiple db-requests in such a way that when any failure occurs all the changes that were made with this transaction get cancelled. For most dbs transactions also provide guarantees that nothing will get changed in between the db-requests in multithreaded applications.
+Transactions allow to perform multiple db-requests in such a way that when any failure occurs all the changes that were made with transaction get cancelled. For most databases transactions also provide guarantees that nothing will get changed in between the db-requests in multithreaded applications.
 
-All db-requests which should be executed as part of transaction must be run on the same thread.
+All db-requests which should be executed as part of a transaction must be run on the same thread and must not contain any other side-effecting code besides the db-statements. The last requirement is caused by the way SORM works around notorious locking issues of JDBC-drivers, by sometimes repeating the same transaction and thus executing the code enclosed in the `transaction` block all over again.
 
-Use transactions with care because for the time the transaction is being executed the involved tables are supposed to get locked, putting all the requests to them from other threads in a queue until the current transaction finishes. The best practice is to make transactions as short as possible and to perform calculations prior to entering a transaction.
+Use transactions with care because of the overhead (table/row locking, MVCC, etc.) that the underlying database engine will have to undertake in order to synchronise concurring transactions. The best practice is to make transactions as short as possible and to perform all the intensive calculations prior to entering a transaction.
 
 #### Example #1
 {% highlight scala %}
