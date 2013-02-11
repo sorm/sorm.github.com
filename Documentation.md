@@ -69,7 +69,7 @@ There are two types of keys in SORM:
 #### Specifying
 
 {% highlight scala %}
-Entity[Task](unique = Set() + Seq("name")),
+Entity[Task](unique = Set() + Seq("name"),
              indexed = Set() + Seq("started") + Seq("closed", "outdated", "started"))
 {% endhighlight %}
 You can see a declaration of a unique key for a single property "name" and two indexes - for a single property "started" and for a group of properties "closed", "outdated" and "started".

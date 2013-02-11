@@ -52,7 +52,7 @@ case class Locale
 
 You can see that instead of assigning the `Genre` and `Artist` objects with a common `name` property we've decided here to go a bit tougher way to let our application support different locales and to allow it to store different variants of names for the same entity if there exist alternatives. For instance, in the English locale one artist we will store will have three alternative names: "The Rolling Stones", "Rolling Stones" and "Rolling Stones, The".
 
-Now, for a minute, just imagine what a nightmare it would be to represent such a model in a relational DB...
+Now, for a minute, just imagine what it would take to represent such a model in a relational DB...
 
 ##Let's initialize SORM:
 
