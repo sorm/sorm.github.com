@@ -46,8 +46,8 @@ internal_links:
     url: /SORM-vs-Slick.html
   - name: Tutorial
     url: /Tutorial.html
-  - name: SORM & Play
-    url: /SORM-and-Play.html
+  # - name: SORM & Play
+  #   url: /SORM-and-Play.html
 
 github: https://github.com/nikita-volkov/sorm
 
