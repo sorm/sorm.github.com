@@ -276,3 +276,31 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
       </ul>
   </li>
 </ul>
+
+
+## Type-safety
+<ul class="vs">
+  <li>
+    <h3>SORM</h3>
+    <p>Not complete. In queries and in instance declaration fields are referred with strings.</p>
+  </li>
+  <li>
+    <h3>Slick</h3>
+    <p>Queries performed with Slick are type safe.</p>
+  </li>
+</ul>
+
+## Support for schema mapping customization
+<ul class="vs">
+  <li>
+    <h3>SORM</h3>
+    <p>SORM completely hides the details of database generation from user, as such it makes it impossible to make any customizable mappings.</p>
+  </li>
+  <li>
+    <h3>Slick</h3>
+    <p>With Slick you get a fine-grain control over how the database tables get mapped.</p>
+  </li>
+</ul>
+
+
+
