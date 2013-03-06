@@ -62,3 +62,5 @@ html, body { color: #5e6669; }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4 { margin-top: 20px; margin-bottom: 20px; }
 .post-content pre { margin-top: 10px; margin-bottom: 10px; }
 .post-content p { margin-bottom: 10px; }
+
+em { font-style: italic; }

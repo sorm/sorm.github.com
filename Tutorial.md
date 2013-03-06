@@ -59,11 +59,12 @@ Now, for a minute, just imagine what it would take to represent such a model in 
 {% highlight scala %}
 import sorm._
 
-object Db extends Instance (
-  entities = Set() + 
-             Entity[Artist]() + 
-             Entity[Genre]() + 
-             Entity[Locale](unique = Set() + Seq("code")),
+object Db extends Instance(
+  entities = Set(
+    Entity[Artist](),
+    Entity[Genre](),
+    Entity[Locale](unique = Set() + Seq("code"))
+  ),
   url = "jdbc:h2:mem:test",
   user = "",
   password = "",
@@ -111,12 +112,6 @@ Db.save( Artist( Map( en -> Seq("The Rolling Stones",
                                 "Роллинг Стоунс",
                                 "Ролинг Стоунс") ),
                  Set( rock ) ) )
-Db.save( Artist( Map( en -> Seq("Dire Straits"),
-                      ru -> Seq("Даэр Стрэйтс") ),
-                 Set( rock ) ) )
-Db.save( Artist( Map( en -> Seq("Godsmack"),
-                      ru -> Seq("Годсмэк") ),
-                 Set( metal, hardRock, rock ) ) )
 {% endhighlight %}
 
 

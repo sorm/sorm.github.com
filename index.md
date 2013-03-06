@@ -15,7 +15,7 @@ keywords:
   - Pooling
 ---
 
-SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity embracing functional programming concepts.
+SORM is a purely Scala-oriented object-relational mapping framework designed to eliminate boilerplate and maximize productivity while embracing functional programming concepts.
 
 ##Features
 
@@ -31,13 +31,13 @@ Following is a complete example. No extra code is required for it to work.
 
 {% highlight scala %}
 // Declare a model:
-case class Artist ( name : String, genres : Set[Genre] )
-case class Genre ( name : String ) 
+case class Artist( name : String, genres : Set[Genre] )
+case class Genre( name : String ) 
 
 // Initialize SORM, automatically generating schema:
 import sorm._
-object Db extends Instance (
-  entities = Set() + Entity[Artist]() + Entity[Genre](),
+object Db extends Instance(
+  entities = Set( Entity[Artist](), Entity[Genre]() ),
   url = "jdbc:h2:mem:test"
 )
 

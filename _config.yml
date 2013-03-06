@@ -18,14 +18,12 @@ keywords:
   - SORM Framework
   - Functional ORM Scala
   - Case Classes ORM
-  - Immutable Class
-  - Immutable Data
   - Case Class
   - Immutable
   - Functional
+  - Boilerplate
   - SORM
   - ORM
-  - Scala 
 
 author:
   name: Nikita Volkov
@@ -48,6 +46,8 @@ internal_links:
     url: /SORM-vs-Slick.html
   - name: Tutorial
     url: /Tutorial.html
+  - name: SORM & Play
+    url: /SORM-and-Play.html
 
 github: https://github.com/nikita-volkov/sorm
 
@@ -65,7 +65,7 @@ copyright:
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url: http://www.sorm-framework.org
+production_url: http://sorm-framework.org
 
 analytics:
   google: 
