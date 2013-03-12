@@ -339,7 +339,7 @@ Values with up to 65 digits before and 30 after the point are supported.
 Supported
 
 #### Either
-Not supported. Support may come in future releases. You can speed it up by voting for it on the [issue tracker](https://github.com/nikita-volkov/sorm/issues).
+Not supported. Support may come in future releases. You can speed it up by voting for it on the [issue tracker](https://github.com/sorm/sorm/issues).
 
 #### Collections
 General types of immutable collections: `Seq`, `Set` and `Map` - are all supported. Please note that you should always use these general types instead of specific ones, i.e. `Seq` instead of `List`, `IndexedSeq` or `Vector` and etc.

@@ -25,19 +25,15 @@ keywords:
   - SORM
   - ORM
 
-author:
-  name: Nikita Volkov
-  email: nikita.y.volkov@mail.ru
-
 external_links: 
   - name: API
     url: /api
   - name: Issues
-    url: https://github.com/nikita-volkov/sorm/issues
+    url: https://github.com/sorm/sorm/issues
   - name: Stack Overflow
     url: http://stackoverflow.com/questions/tagged/sorm
   - name: GitHub
-    url: https://github.com/nikita-volkov/sorm
+    url: https://github.com/sorm/sorm
 
 internal_links:
   - name: Documentation
@@ -49,11 +45,11 @@ internal_links:
   # - name: SORM & Play
   #   url: /SORM-and-Play.html
 
-github: https://github.com/nikita-volkov/sorm
+github: https://github.com/sorm/sorm
 
 copyright: 
-  text: © Nikita Volkov, 2012
-  url: https://github.com/nikita-volkov
+  text: © SORM Framework Team, 2012
+  url: https://github.com/sorm
 
 
 
