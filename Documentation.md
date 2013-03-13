@@ -19,10 +19,10 @@ navigation:
   - name: Tracing SQL
     anchor: tracing_sql
 keywords:
-  - SORM Documentation
-  - Documentation
-  - SORM Reference
-  - Reference
+  - sorm documentation
+  - documentation
+  - sorm reference
+  - reference
 ---
 <style>
 

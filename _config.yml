@@ -14,12 +14,12 @@ title: SORM
 tagline: An elegant and scalable way to do persistence in Scala
 description: A functional boilerplate-free Scala ORM
 keywords:
-  - Scala ORM
-  - SORM 
-  - Scala
-  - ORM
-  - Functional
-  - Boilerplate
+  - scala orm
+  - sorm 
+  - scala
+  - orm
+  - functional
+  - boilerplate
 
 external_links: 
   - name: API

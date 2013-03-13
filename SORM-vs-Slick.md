@@ -4,9 +4,9 @@ group: navigation
 layout: page
 comments: true
 keywords: 
-  - SORM vs Slick
-  - Slick
-  - Comparison
+  - sorm vs slick
+  - slick
+  - comparison
 ---
 <style>
 

@@ -5,14 +5,14 @@ header: SORM
 tagline: An elegant and scalable way to do persistence in Scala 
 comments: false
 keywords: 
-  - Scalable
-  - Akka
-  - Actors
-  - Concurrency
-  - Multithreading
-  - Connection Pooling
-  - Case Class
-  - Functional Programming
+  - scalable
+  - akka
+  - actors
+  - concurrency
+  - multithreading
+  - connection pooling
+  - case class
+  - functional programming
 ---
 
 SORM is a Scala ORM framework designed to eliminate boilerplate code while solving the problems of scalability with a high level abstraction and a functional programming style.
