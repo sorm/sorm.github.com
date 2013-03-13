@@ -11,9 +11,8 @@ exclude:
 
 
 title: SORM
-tagline: A functional boilerplate-free Scala ORM
-description:
-  A pure case-classes oriented ORM framework for Scala
+tagline: An elegant and scalable way to do persistence in Scala
+description: A functional boilerplate-free Scala ORM
 keywords:
   - Scala ORM
   - SORM 
