@@ -45,8 +45,8 @@ object Db extends Instance(
 // Store values in the db:
 val metal = Db.save( Genre("Metal") )
 val rock = Db.save( Genre("Rock") )
-Db.save( Artist("Metallica", Set() + metal + rock) )
-Db.save( Artist("Dire Straits", Set() + rock) )
+Db.save( Artist("Metallica", Set(metal, rock) ) )
+Db.save( Artist("Dire Straits", Set(rock) ) )
 
 // Retrieve values from the db:
 // Option[Artist with Persisted]:
