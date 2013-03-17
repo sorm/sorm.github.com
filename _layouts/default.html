@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <meta name="keywords" content="{% if page.keywords %}{{page.keywords | join: ','}},{{site.keywords | join: ','}}{% else %}{{site.keywords | join: ','}}{% endif %}" />
+  <meta name="keywords" content="{% if page.keywords %}{{site.keywords | join: ','}},{{page.keywords | join: ','}}{% else %}{{site.keywords | join: ','}}{% endif %}" />
   <meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
   <meta name="robots" content="{% if page.noindex %}NOINDEX,NOFOLLOW{% else %}INDEX,FOLLOW{%endif%}" />
   
