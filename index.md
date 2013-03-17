@@ -13,9 +13,10 @@ keywords:
   - connection pooling
   - case class
   - functional programming
+  - high level
 ---
 
-SORM is a Scala ORM framework designed to eliminate boilerplate code while solving the problems of scalability with a high level abstraction and a functional programming style.
+SORM is a Scala ORM framework designed to eliminate boilerplate code and solve the problems of scalability with a high level abstraction and a functional programming style.
 
 ##Features
 
