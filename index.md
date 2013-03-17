@@ -62,11 +62,10 @@ Latest release info and installation instructions are provided at the project's 
 ##Learn More
 You can see how SORM compares to Slick [here](/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
 
-##Support
-Support is provided at [StackOverflow](http://stackoverflow.com/questions/tagged/sorm). Go ahead and ask your questions under a tag "sorm".
+##Support and Issues
+If you have a question concerning how to use SORM, post it on [StackOverflow](http://stackoverflow.com/questions/tagged/sorm) under a tag "sorm".
 
-##Issues
-Please, post any issues you come across [here](https://github.com/sorm/sorm/issues).
+If you come across any issue, have a suggestion or a feature request, please, post it on the project's [Issue Tracker](https://github.com/sorm/sorm/issues).
 
 ##Contribution
 Any kind of contribution is much appreciated. If you find anything that you think SORM could evolve on, go ahead and [fork it](https://github.com/sorm/sorm)! 
