@@ -66,6 +66,3 @@ You can see how SORM compares to Slick [here](/SORM-vs-Slick.html) or continue o
 If you have a question concerning how to use SORM, post it on [StackOverflow](http://stackoverflow.com/questions/tagged/sorm) under a tag "sorm".
 
 If you come across any issue, have a suggestion or a feature request, please, post it on the project's [Issue Tracker](https://github.com/sorm/sorm/issues).
-
-##Contribution
-Any kind of contribution is much appreciated. If you find anything that you think SORM could evolve on, go ahead and [fork it](https://github.com/sorm/sorm)! 
