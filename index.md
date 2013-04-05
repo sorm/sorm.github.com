@@ -21,7 +21,7 @@ SORM is a Scala ORM framework designed to eliminate boilerplate code and solve t
 ##Features
 
 * __Complete abstraction from relational concepts__. You work with case classes, collections and other standard Scala data types instead of tables, rows, foreign keys and relations.
-* __Complete separation of domain model from persistence layer__. There are no annotations, special types or any other dependencies on persistence layer present in model declaration. <a href="http://www.youtube.com/watch?v=Fyexd07BUuc" target="_blank">This house is clear</a>!
+* __Complete separation of domain model from persistence layer__. There are no annotations, special types or any other dependencies on persistence layer present in model declaration. This house is clear!
 * __An intuitive and centralized connection-agnostic API__. No tangled implicit constructions polluting your namespace and functionality scattered across multiple components. No manual management of connections.
 * __Concurrency__. A single SORM instance can safely be used across multiple threads and seamlessly integrates into actor-based concurrent systems, like Akka.
 * __Integrated connection pooling__. Scalable just by setting a "poolSize" parameter.
