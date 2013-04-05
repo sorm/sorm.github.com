@@ -31,7 +31,7 @@ SORM is a Scala ORM framework designed to eliminate boilerplate code and solve t
 
 Following is a complete example. No extra code is required for it to work.
 
-{% highlight scala %}
+```scala
 // Declare a model:
 case class Artist( name : String, genres : Set[Genre] )
 case class Genre( name : String ) 
@@ -54,7 +54,7 @@ Db.save( Artist("Dire Straits", Set(rock) ) )
 val metallica = Db.query[Artist].whereEqual("name", "Metallica").fetchOne() 
 // Stream[Artist with Persisted]:
 val rockArtists = Db.query[Artist].whereEqual("genres.item.name", "Rock").fetch() 
-{% endhighlight %}
+```
 
 ##Installation and Latest Release Info
 Latest release info and installation instructions are provided at the project's [GitHub page][https://github.com/sorm/sorm#readme].
