@@ -19,9 +19,9 @@ A Maven dependency to SORM looks like so:
 
 {% highlight xml %}
 <dependency>
-  <groupId>com.github.nikita-volkov</groupId>
+  <groupId>org.sorm-framework</groupId>
   <artifactId>sorm</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.8</version>
 </dependency>
 {% endhighlight %}
 
