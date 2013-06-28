@@ -8,13 +8,13 @@
   
   <title>{% if page.title %} {{ page.title }} - {% endif %} {{ site.title }}</title>
   {% if site.favicon %}
-  <link rel="shortcut icon" href="{{site.baseurl}}{{site.favicon}}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{site.favicon}}" type="image/x-icon" />
   {% endif %}
-  <link rel="stylesheet" href="{{site.baseurl}}fonts/open-sans.css" />
-  <link rel="stylesheet" href="{{site.baseurl}}css/reset.css" />
-  <link rel="stylesheet" href="{{site.baseurl}}css/prose-bootstrap.css" />
-  <link rel="stylesheet" href="{{site.baseurl}}css/main.css" />
-  <link rel="stylesheet" href="{{site.baseurl}}css/pygments/trac.css" />
+  <link rel="stylesheet" href="/fonts/open-sans.css" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/prose-bootstrap.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/pygments/trac.css" />
   {% if page.analytics != false %}
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -35,13 +35,13 @@
 
     <div id="header">
       <div class="navigation">
-        <a href="{{site.baseurl}}" class="title">{{site.title}}</a>
+        <a href="/" class="title">{{site.title}}</a>
         {% for item in site.internal_links %}
-          | <a href="{{site.baseurl}}{{item.url}}">{{item.name}}</a>
+          | <a href="{{item.url}}">{{item.name}}</a>
         {% endfor %}
         <div style="float: right;">
           {% for item in site.external_links %}
-            | <a href="{{site.baseurl}}{{item.url}}" target="_blank">{{item.name}}</a>
+            | <a href="{{item.url}}" target="_blank">{{item.name}}</a>
           {% endfor %}
         </div>
       </div>
