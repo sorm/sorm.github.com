@@ -23,7 +23,7 @@ keywords:
 
 external_links: 
   - name: API
-    url: /api
+    url: /sorm/current
   - name: Issues
     url: https://github.com/sorm/sorm/issues
   - name: Stack Overflow

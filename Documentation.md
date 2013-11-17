@@ -33,7 +33,7 @@ keywords:
 
 ## Initialization
 
-SORM API was designed to avoid scatterring accross multiple components. It is centralized in a single class [`Instance`](/api/#sorm.Instance) - you use this class both to access the database and to initialize SORM.
+SORM API was designed to avoid scatterring accross multiple components. It is centralized in a single class [`Instance`](/sorm/current/#sorm.Instance) - you use this class both to access the database and to initialize SORM.
 
 There aren't many things you'll need to configure in SORM, and most of them are quite obvious, so first off we'll start with a complete example of SORM initialization.
 
@@ -56,7 +56,7 @@ object Db extends Instance (
 In the code above you can see a data model declaration, which is followed by SORM instance configured to work with case classes `Artist` and `Genre`. This instance will create an appropriate unique key for a `Genre` property `name`. It will connect to an in-memory H2 database named `test` without specifying user or password and will generate schema tables if they don’t already exist. It will also manage a pool of 12 connections, allowing you to utilize as many to connect to your db parallelly.
 
 ### Entities
-As you already know SORM works with data models designed with case classes, which are also called entities. In order for SORM to generate a correct database schema and to know how to work with your model generally, you need to register all entities of your model with it. You do that with a help of a [`sorm.Entity`](/api/#sorm.Entity$) case class, in a type-argument of which you specify the case class and in optional arguments `unique` and `indexed` you specify the keys.
+As you already know SORM works with data models designed with case classes, which are also called entities. In order for SORM to generate a correct database schema and to know how to work with your model generally, you need to register all entities of your model with it. You do that with a help of a [`sorm.Entity`](/sorm/current/#sorm.Entity$) case class, in a type-argument of which you specify the case class and in optional arguments `unique` and `indexed` you specify the keys.
 
 ### Keys
 #### Types of keys
@@ -85,10 +85,10 @@ This feature becomes essential when your application puts a 100% load on a db co
 
 ### Initialization mode
 Each time you launch your application SORM performs initialization. For purposes of running your application in different environments (dev, production) multiple initialization modes were implemented. You specify them with an `initMode` parameter.
-* [`DropAllCreate`](/api/#sorm.InitMode$) - wipe out all the contents of the db and generate the new tables. Useful for development. Complete data loss risks - be very careful not to specify this option in production environment
-* [`DropCreate`](/api/#sorm.InitMode$) - drop only the tables which have conflicting names with the ones to be generated and generate the new ones. Useful for development when there are some tables unrelated to SORM present in the same database. Complete data loss risks - be very careful not to specify this option in production environment
-* [`Create`](/api/#sorm.InitMode$) - try to generate the tables if they don't already exist. No dataloss risks, but when you change your domain, incompatibility errors may arise. Safe to use in production.
-* [`DoNothing`](/api/#sorm.InitMode$) - no changes get applied to schema. Safe to use in production.
+* [`DropAllCreate`](/sorm/current/#sorm.InitMode$) - wipe out all the contents of the db and generate the new tables. Useful for development. Complete data loss risks - be very careful not to specify this option in production environment
+* [`DropCreate`](/sorm/current/#sorm.InitMode$) - drop only the tables which have conflicting names with the ones to be generated and generate the new ones. Useful for development when there are some tables unrelated to SORM present in the same database. Complete data loss risks - be very careful not to specify this option in production environment
+* [`Create`](/sorm/current/#sorm.InitMode$) - try to generate the tables if they don't already exist. No dataloss risks, but when you change your domain, incompatibility errors may arise. Safe to use in production.
+* [`DoNothing`](/sorm/current/#sorm.InitMode$) - no changes get applied to schema. Safe to use in production.
 
 
 
@@ -97,7 +97,7 @@ Each time you launch your application SORM performs initialization. For purposes
 
 ## Persisted trait and ids
 
-All the entities returned from SORM have a [`Persisted`](/api/#sorm.Persisted) trait with an appropriate value of `id` mixed in. This is what lets SORM decide whether to `INSERT` rows or `UPDATE` them (and which ones) when the `save` operation is called. This also provides you with access to its generated `id`.
+All the entities returned from SORM have a [`Persisted`](/sorm/current/#sorm.Persisted) trait with an appropriate value of `id` mixed in. This is what lets SORM decide whether to `INSERT` rows or `UPDATE` them (and which ones) when the `save` operation is called. This also provides you with access to its generated `id`.
 
 Since the `id` property value is meant to be generated by database, it is protected from the user of being able to manually specify it as well as letting the case classes have such a property.
 
@@ -199,7 +199,7 @@ Please note that the types are specified only for reference.
 
 ## Querying
 
-All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create an immutable [`Querier`](/api/#sorm.Querier) object, then stack different "modifier" methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern, just the functional way. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
+All the querying functionality is provided through the `query[T]` method of a SORM instance. The principle is simple: by calling `query[T]` you create an immutable [`Querier`](/sorm/current/#sorm.Querier) object, then stack different "modifier" methods on it, which return copies of this object with appropriate modifications - very similar to "Builder" pattern, just the functional way. After the last modification method you call one of the fetching methods on it, which actually does emit the query and fetches the results from the db.
 
 {% highlight scala %}
 val artists
@@ -216,7 +216,7 @@ With the query above we've fetched three artists which have neither pop or rock 
 
 ### Property path
 
-All modifier methods of [`Querier`](http://nikita-volkov.github.com/sorm/api/#sorm.Querier) accept a `String` value as a first parameter. This value specifies a path to a symbol in a tree of the accessed entity. Path is specified as dot-delimited nodes. 
+All modifier methods of [`Querier`](http://nikita-volkov.github.com/sorm/sorm/current/#sorm.Querier) accept a `String` value as a first parameter. This value specifies a path to a symbol in a tree of the accessed entity. Path is specified as dot-delimited nodes. 
 
 #### Path tree nodes reference
 
@@ -263,7 +263,7 @@ Db.query[Artist].whereContains("genres.item.names.value", "pop").fetch()
 
 ### The "or" conditions and DSL
 
-Stacking filters on top of each other with piped "where"-clauses produces an `and` logic, to introduce `or` conditions to your query you'll have to use the DSL and a special `where` method of [`Querier`](http://nikita-volkov.github.com/sorm/api/#sorm.Querier).
+Stacking filters on top of each other with piped "where"-clauses produces an `and` logic, to introduce `or` conditions to your query you'll have to use the DSL and a special `where` method of [`Querier`](http://nikita-volkov.github.com/sorm/sorm/current/#sorm.Querier).
 
 Here's how you'd do a query to select an artist who has a genre equaling either "metal" or "rock", but excluding "Metallica":
 

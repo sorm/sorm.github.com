@@ -60,7 +60,7 @@ val rockArtists = Db.query[Artist].whereEqual("genres.item.name", "Rock").fetch(
 Latest release info and installation instructions are provided at the project's [GitHub page](https://github.com/sorm/sorm#readme).
 
 ##Learn More
-You can see how SORM compares to Slick [here](/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/api/) (you're really interested in the contents of a plain `sorm._` package only).
+You can see how SORM compares to Slick [here](/SORM-vs-Slick.html) or continue on to a more comprehensive [Tutorial](/Tutorial.html). For detailed documentation please visit [this page](/Documentation.html) or learn the [API](/sorm/current/) (you're really interested in the contents of a plain `sorm._` package only).
 
 ##Support and Issues
 If you have a question concerning how to use SORM, post it on [StackOverflow](http://stackoverflow.com/questions/tagged/sorm) under a tag "sorm".
