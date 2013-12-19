@@ -2,7 +2,7 @@
 layout: page
 title: Introduction
 header: SORM
-tagline: An elegant and scalable way to do persistence in Scala 
+tagline: A functional boilerplate-free Scala ORM
 comments: false
 keywords: 
   - scalable
@@ -16,7 +16,7 @@ keywords:
   - high level
 ---
 
-SORM is a Scala ORM framework designed to eliminate boilerplate code and solve the problems of scalability with a high level abstraction and a functional programming style.
+SORM is a Scala ORM-framework designed to eliminate boilerplate code and solve the problems of scalability with a high level abstraction and a functional programming style.
 
 ##Features
 
