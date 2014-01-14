@@ -373,10 +373,20 @@ case class B ( name : String )
 
 ## Tracing SQL
 
-For debugging purposes it can be useful to see the SQL that SORM emits under the hood. For that you need to set its logging level to "debug". To do that you just need to add the following VM option to your app execution:
+For debugging purposes it can be useful to see the SQL that SORM emits under the hood. For that you need to set its logging level to "debug". For example, you can add an SLF4J SimpleLogger dependency to your project:
 
-    org.slf4j.simplelogger.log.sorm=debug
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.2</version>
+      <scope>test</scope>
+    </dependency>
 
-Here's a complete sample execution command:
+and set the following VM property on your project execution:
 
-    java -Dorg.slf4j.simplelogger.log.sorm=debug -jar MyAmazingApp.jar
+    org.slf4j.simpleLogger.log.sorm=debug
+
+Here's how a complete execution command can look like:
+
+    java -Dorg.slf4j.simpleLogger.log.sorm=debug -jar MyAmazingApp.jar
+
