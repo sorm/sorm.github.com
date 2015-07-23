@@ -179,6 +179,7 @@ db.withSession {
 {% endhighlight %}
   </li>
 </ul>
+
 ###Collect just the names of coffee and supplier 
 <ul class="vs">
   <li>
@@ -202,6 +203,7 @@ db.withSession {
 </ul>
 
 ##Updating
+
 ###Update sales and total of an already fetched Coffee
 <ul class="vs">
   <li>
@@ -247,7 +249,6 @@ supplier.foreach(v => Db.save(coffee.copy(supplier = v)))
       <p>???</p>
   </li>
   </ul>
-
  -->
 
 
