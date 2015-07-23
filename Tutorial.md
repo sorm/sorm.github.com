@@ -21,7 +21,7 @@ A Maven dependency to SORM looks like so:
 <dependency>
   <groupId>org.sorm-framework</groupId>
   <artifactId>sorm</artifactId>
-  <version>0.3.8</version>
+  <version>0.3.18</version>
 </dependency>
 {% endhighlight %}
 
